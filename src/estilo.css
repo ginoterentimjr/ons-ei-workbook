@@ -1,0 +1,313 @@
+:root{--lar:#E5662C;--tinta:#2A211C;--corpo:#5A5045;--linha:#E2D9CD;--fraco:#8D8377;--claro:#F6F2EC;--papel:#FAF7F1;--escuro:#1B1512;--ouro:#C9A24D;--tom:#E5662C}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,system-ui,sans-serif;font-size:17px;line-height:1.6;color:var(--corpo);background:var(--claro)}
+a{color:var(--lar)}
+h1,h2,h3{color:var(--tinta);line-height:1.2;margin:0 0 .5em}
+h1 em,h2 em{font-style:normal;color:var(--lar)}
+main{max-width:1040px;margin:0 auto;padding:0 20px 40px}
+.topo{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:10px 20px;background:var(--escuro);color:#FBEEE5}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;color:#FBEEE5}
+.marca img{height:30px;width:auto}
+.marca span{display:flex;flex-direction:column;line-height:1.15}
+.marca b{font-size:14px;letter-spacing:2px}
+.marca i{font-style:normal;font-size:10px;letter-spacing:3px;color:var(--ouro)}
+.nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.nav a{color:#FBEEE5;text-decoration:none;font-size:15px;font-weight:500;padding:8px 12px;border-radius:8px}
+.nav a:hover,.nav a.ativo{background:var(--lar);color:#fff}
+.selo-prof{margin-left:auto;background:var(--lar);color:#fff;font-weight:700;font-size:13px;letter-spacing:2px;padding:6px 12px;border-radius:6px}
+.capa{margin:24px 0 0;padding:56px 40px;border-radius:18px;background:var(--escuro);color:#EADFD3;position:relative;overflow:hidden;border-left:10px solid var(--tom)}
+.capa:after{content:"";position:absolute;right:-70px;top:-70px;width:280px;height:280px;border:2px solid var(--ouro);opacity:.35;clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);background:transparent;outline:2px solid var(--ouro)}
+.capa__k{font-size:14px;font-weight:700;letter-spacing:3px;color:var(--ouro);margin:0 0 14px}
+.capa h1{color:#FBEEE5;font-size:clamp(34px,6vw,58px);margin:0 0 16px}
+.capa__l{font-size:19px;max-width:720px;margin:0}
+.bloco{margin:36px 0 0;padding:32px;background:var(--papel);border:1px solid var(--linha);border-radius:18px;border-top:8px solid var(--tom)}
+.bloco--abre{border-top-color:var(--lar)}
+.eyebrow{display:flex;align-items:center;gap:14px;color:var(--tom);font-weight:700;font-size:15px;letter-spacing:2.5px;margin-bottom:10px}
+.eyebrow i{flex:1;height:2px;background:var(--tom);opacity:.5}
+.bloco h2{font-size:clamp(26px,4vw,36px)}
+.bloco h3{font-size:22px;margin-top:1.2em}
+.pergunta{font-size:21px;font-weight:500;color:var(--tinta);border-left:5px solid var(--tom);padding:6px 0 6px 16px;margin:14px 0}
+.pergunta--at{font-size:19px;background:#fff;border-radius:0 10px 10px 0;padding:12px 16px}
+.capaz{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:16px 20px;margin:16px 0}
+.capaz b{color:var(--tinta)}
+.capaz ol{margin:8px 0 0;padding-left:22px}
+.conceito{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:22px 24px;margin:20px 0}
+.conceito h3{margin-top:0}
+.fonte{font-size:15px;color:var(--fraco);margin:10px 0 0}
+.regua{background:#B04A1C;color:#FDEFE6;border-radius:14px;padding:24px;margin:20px 0}
+.regua h3{color:#fff;margin-top:0}
+.regua__q{font-size:22px;font-weight:700;color:#fff}
+.regua .cards3>div{background:rgba(255,255,255,.12);border:0;color:#FDEFE6}
+.regua .cards3 b{color:#fff}
+.regua .tabela--ler{background:#fff;color:var(--corpo)}
+.cards3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:14px 0}
+.cards3>div{background:var(--papel);border:1px solid var(--linha);border-radius:12px;padding:16px 18px}
+.cards3 b{display:block;color:var(--tinta);font-size:18px;margin-bottom:4px}
+.cards3 p{margin:0}
+.cards3 i{display:block;margin-top:8px;color:var(--fraco)}
+.cards2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0 8px}
+.cartao{display:flex;flex-direction:column;gap:6px;padding:22px;border-radius:14px;background:var(--tom);color:#fff;text-decoration:none}
+.cartao span{font-size:13px;font-weight:700;letter-spacing:2px;opacity:.85}
+.cartao b{font-size:22px;line-height:1.2}
+.cartao i{font-style:normal;opacity:.9}
+.nota-pe{color:var(--fraco);font-size:15px}
+.caminho{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:16px 0}
+.caminho__p{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:14px 8px;border-radius:12px;background:#fff;border:2px solid var(--linha);text-decoration:none;color:var(--corpo)}
+.caminho__g{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--fraco);text-transform:uppercase;min-height:34px}
+.caminho__n{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:22px;color:var(--tom);border:3px solid var(--tom);background:var(--claro)}
+.caminho__p b{color:var(--tinta);font-size:15px;line-height:1.25}
+.caminho__p small{font-size:13px}
+.caminho__p em{font-style:normal;font-size:13px;font-weight:500;color:var(--tom)}
+.caminho__p.feito .caminho__n,.caminho__p.aqui .caminho__n{background:var(--tom);color:#fff}
+.caminho__p.aqui{border-color:var(--lar);box-shadow:0 0 0 3px rgba(229,102,44,.25)}
+.indice{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}
+.indice li{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;background:#fff;border-left:6px solid var(--tom);border-radius:0 10px 10px 0;padding:10px 14px}
+.indice a{color:var(--tinta);text-decoration:none;font-weight:500}
+.indice a b{color:var(--tom)}
+.indice span{color:var(--fraco);font-size:15px}
+.atividade{background:#fff;border:2px solid var(--tom);border-radius:16px;padding:24px;margin:24px 0}
+.atividade__cab{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.selo{display:inline-block;background:var(--tom);color:#fff;font-weight:700;font-size:13px;letter-spacing:1.5px;padding:6px 12px;border-radius:999px;text-decoration:none}
+.selo--miro{background:#fff;color:var(--tom);border:2px solid var(--tom)}
+.atividade h3{margin-top:4px;font-size:24px}
+.passos{padding-left:0;list-style:none;counter-reset:p;margin:14px 0}
+.passos li{counter-increment:p;position:relative;padding:8px 0 8px 48px;border-bottom:1px solid var(--linha)}
+.passos li:before{content:counter(p);position:absolute;left:0;top:7px;width:32px;height:32px;border-radius:50%;background:var(--tom);color:#fff;font-weight:700;display:grid;place-items:center}
+.passos li i{font-style:normal;font-weight:700;color:var(--tom);white-space:nowrap}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:14px 0}
+.meta div{background:var(--papel);border-radius:10px;padding:10px 14px}
+.meta span{display:block;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--fraco)}
+.meta b{font-weight:500;color:var(--tinta);font-size:16px}
+.exemplo{background:#FBEFE4;border-radius:12px;padding:14px 18px;margin:14px 0}
+.exemplo>span{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--lar)}
+.exemplo p{margin:6px 0}
+.registro{border:2px dashed var(--tom);border-radius:14px;padding:18px;margin:18px 0 6px;background:var(--papel)}
+.registro__t{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--tom)}
+.campo{margin:14px 0 0}
+.campo label{display:block;color:var(--tinta);margin-bottom:4px}
+.dica{margin:0 0 6px;font-size:15px;color:var(--fraco)}
+textarea,input[type=text],select{width:100%;font:inherit;font-size:16px;color:var(--tinta);background:#fff;border:1.5px solid #CFC4B5;border-radius:10px;padding:10px 12px}
+textarea{resize:vertical;min-height:52px}
+textarea:focus,input:focus,select:focus{outline:3px solid rgba(229,102,44,.35);border-color:var(--lar)}
+.espelho__v{background:#fff;border:1.5px solid var(--linha);border-radius:10px;padding:10px 12px;color:var(--tinta);white-space:pre-wrap}
+.notas{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.banco{margin:4px 0 8px}
+.lacunas,.associar{padding-left:22px;margin:8px 0 12px}
+.lacunas li,.associar li{margin:8px 0}
+.lacuna{width:74px!important;display:inline-block;text-align:center;font-weight:700}
+.associar li{display:grid;grid-template-columns:1fr minmax(200px,260px);gap:12px;align-items:center}
+.certo{border-color:#3F7D4E!important;background:#E9F4EA!important}
+.errado{border-color:#B8432F!important;background:#FBE9E5!important}
+.tabela-w{overflow-x:auto;margin:10px 0}
+.tabela{width:100%;border-collapse:collapse;font-size:16px}
+.tabela th{background:var(--tinta);color:#FBEEE5;text-align:left;padding:10px 12px;font-size:14px;letter-spacing:.5px}
+.tabela td{border:1px solid var(--linha);padding:8px 10px;vertical-align:top;background:#fff;min-width:190px}
+.tabela--ler td{padding:10px 12px}
+.tabela td textarea,.tabela td select{border-color:var(--linha)}
+.mapa{position:relative;margin:16px 0 0;height:480px;background:#fff;border:1.5px solid var(--linha);border-radius:12px;overflow:hidden}
+.mapa:before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:2px dashed var(--linha)}
+.mapa:after{content:"";position:absolute;top:50%;left:0;right:0;border-top:2px dashed var(--linha)}
+.mapa__q{position:absolute;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--fraco);text-transform:uppercase;padding:8px 10px;z-index:1}
+.mapa__n{position:absolute;z-index:2;max-width:42%;font-size:14px;line-height:1.25;font-weight:500;color:var(--tinta);padding:6px 9px;border-radius:6px;box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.pontos{margin:14px 0 0;background:var(--papel);border-radius:12px;padding:12px 16px}
+.pontos summary{cursor:pointer;font-weight:700;color:var(--tinta)}
+.btn{display:inline-block;font:inherit;font-size:15px;font-weight:700;border-radius:10px;padding:10px 16px;cursor:pointer;text-decoration:none;border:2px solid transparent}
+.btn--sec{background:#fff;color:var(--tinta);border-color:var(--tinta)}
+.btn--mentor{background:var(--tinta);color:#fff}
+.mentor{margin:14px 0 0}
+.barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0 0}
+.barra__s{flex:1;min-width:220px;color:var(--fraco);font-size:15px}
+.prof{margin:16px 0 0;background:#2A211C;color:#EADFD3;border-radius:12px;padding:16px 20px}
+.prof>span{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--ouro)}
+.prof__resp{background:rgba(255,255,255,.08);border-radius:10px;padding:10px 14px;margin-top:10px}
+.prof__resp b{color:#fff;display:block}
+.rodape{max-width:1040px;margin:0 auto;padding:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--fraco);border-top:1px solid var(--linha)}
+.rodape span:last-child{color:var(--lar);font-weight:700}
+@media(max-width:760px){
+ body{font-size:16px}.bloco{padding:20px}.capa{padding:36px 22px}
+ .caminho{grid-template-columns:1fr 1fr}.caminho__g{min-height:0}
+ .associar li{grid-template-columns:1fr}
+ .tabela[data-tabela] thead{display:none}
+ .tabela[data-tabela] tr{display:block;margin-bottom:14px;border:1px solid var(--linha);border-radius:10px;overflow:hidden}
+ .tabela[data-tabela] td{display:block;border:0;border-bottom:1px solid var(--linha)}
+ .tabela[data-tabela] td:before{content:attr(data-th);display:block;font-size:12px;font-weight:700;letter-spacing:1px;color:var(--fraco);text-transform:uppercase;margin-bottom:4px}
+ .mapa{height:420px}
+}
+@media print{
+ .topo,.barra,.mentor,.btn{display:none!important}
+ body{background:#fff;font-size:12pt}.bloco,.atividade,.conceito{break-inside:avoid-page;box-shadow:none}
+ .bloco{break-inside:auto}.capa{background:#fff;color:#000;border:2px solid #000}.capa h1{color:#000}.capa__k{color:#000}
+ textarea,input,select{border:1px solid #999}
+ details.pontos{display:block}
+}
+
+/* ===== camada 2026-11 · mapa de navegação, conta e capas com foto ===== */
+.btn{background:var(--lar);color:#fff}
+.btn--sec{background:#fff;color:var(--tinta);border-color:var(--tinta)}
+.btn--mentor{background:var(--tinta);color:#fff}
+.btn--grande{font-size:17px;padding:14px 22px;margin-top:18px;width:100%}
+.btn:hover{filter:brightness(1.06)}
+.disco{flex:none;display:inline-grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--tom)}
+.disco svg{display:block}
+.capa--foto{background-color:var(--escuro);background-image:var(--foto,none);background-position:right center;background-size:cover;background-repeat:no-repeat;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end}
+.capa--foto .capa__l,.capa--foto h1,.capa--foto .capa__k{max-width:640px;position:relative;z-index:1}
+.capa--foto:after{opacity:.22}
+.conta{display:flex;align-items:center;gap:10px;font-size:14px;color:#FBEEE5}
+.conta a{color:#FBEEE5;font-weight:700;text-decoration:none;border:1.5px solid var(--ouro);padding:6px 12px;border-radius:8px}
+.conta span{font-weight:700}
+.conta__sair{font:inherit;font-size:13px;background:transparent;color:var(--ouro);border:1.5px solid var(--ouro);border-radius:8px;padding:5px 10px;cursor:pointer}
+.aviso-conta{margin:16px 0 0;padding:14px 18px;border-radius:12px;background:#FFF4EC;border-left:6px solid var(--lar);color:var(--tinta)}
+.aviso-conta .btn{margin-left:8px;padding:6px 14px}
+.barra__s--ok{color:#4B6A41;font-weight:500}
+.barra__s--ok:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#5E7D52;margin-right:8px;vertical-align:1px}
+/* entrada */
+.entrada{margin:28px 0 0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:start}
+.entrada[hidden]{display:none}
+.entrada__f{padding:32px;background:var(--papel);border:1px solid var(--linha);border-top:8px solid var(--lar);border-radius:18px}
+.entrada__f h2{font-size:clamp(26px,4vw,34px)}
+.entrada__f label{display:block;margin:16px 0 6px;color:var(--tinta)}
+.entrada__f input{font-size:18px;padding:12px 14px}
+.entrada__f input[name=codigo]{letter-spacing:10px;max-width:200px}
+.entrada__aviso{min-height:1.6em;margin:12px 0 0;color:var(--corpo);font-weight:500}
+.entrada__aviso--erro{color:#A33B12}
+.entrada__passos{list-style:none;margin:0;padding:12px 0 0;display:flex;flex-direction:column;gap:22px;position:relative}
+.entrada__passos:before{content:"";position:absolute;left:26px;top:40px;bottom:40px;border-left:2.5px dashed var(--ouro)}
+.entrada__passos li{display:flex;gap:18px;align-items:flex-start;position:relative}
+.entrada__passos b{display:block;color:var(--tinta);font-size:19px;margin-top:6px}
+.entrada__passos p{margin:2px 0 0}
+/* mapa do curso */
+.mapa-curso{margin:36px 0 0;padding:36px 32px 32px;border-radius:18px;border:1px solid var(--linha);position:relative;overflow:hidden;
+  background:var(--papel) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%221000%22%20height%3D%22560%22%20viewBox%3D%220%200%201000%20560%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23C9A24D%22%20stroke-opacity%3D%22.28%22%20stroke-width%3D%221.1%22%3E%3Cpath%20d%3D%22M219.3%2C150.0%20L220.1%2C152.6%20L220.0%2C155.2%20L219.1%2C157.8%20L217.5%2C160.1%20L215.2%2C162.2%20L212.6%2C163.9%20L209.8%2C165.5%20L207.0%2C166.8%20L204.3%2C168.0%20L201.7%2C169.2%20L199.2%2C170.3%20L196.7%2C171.4%20L194.1%2C172.4%20L191.4%2C173.3%20L188.6%2C173.9%20L185.8%2C174.3%20L182.9%2C174.4%20L180.0%2C174.2%20L177.2%2C173.9%20L174.4%2C173.5%20L171.6%2C173.1%20L168.8%2C172.7%20L165.9%2C172.4%20L162.8%2C172.1%20L159.6%2C171.6%20L156.3%2C171.0%20L153.0%2C170.0%20L150.1%2C168.6%20L147.6%2C166.8%20L145.8%2C164.6%20L144.7%2C162.2%20L144.4%2C159.6%20L144.7%2C157.0%20L145.5%2C154.5%20L146.5%2C152.2%20L147.6%2C150.0%20L148.5%2C148.0%20L149.1%2C146.0%20L149.5%2C143.9%20L149.7%2C141.8%20L149.9%2C139.6%20L150.3%2C137.3%20L151.0%2C135.0%20L152.2%2C132.7%20L153.9%2C130.7%20L156.1%2C128.9%20L158.6%2C127.4%20L161.5%2C126.3%20L164.5%2C125.4%20L167.6%2C124.7%20L170.7%2C124.3%20L173.8%2C123.9%20L176.9%2C123.6%20L180.0%2C123.4%20L183.1%2C123.4%20L186.3%2C123.6%20L189.3%2C124.2%20L192.2%2C125.2%20L194.8%2C126.5%20L197.0%2C128.1%20L198.9%2C130.0%20L200.5%2C131.9%20L201.9%2C133.8%20L203.2%2C135.5%20L204.7%2C137.2%20L206.4%2C138.7%20L208.5%2C140.2%20L210.8%2C141.7%20L213.3%2C143.4%20L215.7%2C145.3%20L217.8%2C147.6%20L219.3%2C150.0Z%22/%3E%3Cpath%20d%3D%22M259.8%2C150.0%20L260.6%2C155.2%20L259.7%2C160.4%20L257.2%2C165.3%20L253.4%2C169.8%20L248.8%2C173.7%20L243.6%2C177.2%20L238.4%2C180.3%20L233.2%2C183.1%20L228.3%2C185.8%20L223.4%2C188.4%20L218.6%2C190.9%20L213.7%2C193.3%20L208.5%2C195.3%20L203.1%2C197.0%20L197.4%2C198.1%20L191.6%2C198.7%20L185.8%2C198.7%20L180.0%2C198.3%20L174.4%2C197.8%20L168.8%2C197.2%20L163.1%2C196.6%20L157.3%2C196.2%20L151.2%2C195.8%20L144.7%2C195.2%20L138.1%2C194.3%20L131.5%2C192.8%20L125.3%2C190.5%20L120.0%2C187.3%20L115.7%2C183.3%20L112.9%2C178.7%20L111.5%2C173.7%20L111.4%2C168.5%20L112.3%2C163.4%20L113.8%2C158.6%20L115.5%2C154.2%20L116.9%2C150.0%20L117.8%2C146.0%20L118.1%2C141.9%20L118.1%2C137.7%20L118.0%2C133.3%20L118.1%2C128.6%20L118.8%2C123.8%20L120.5%2C119.1%20L123.2%2C114.7%20L127.0%2C110.8%20L131.7%2C107.4%20L137.1%2C104.6%20L143.0%2C102.5%20L149.0%2C100.8%20L155.1%2C99.4%20L161.3%2C98.3%20L167.5%2C97.3%20L173.7%2C96.6%20L180.0%2C96.3%20L186.3%2C96.4%20L192.6%2C97.2%20L198.5%2C98.8%20L204.0%2C101.1%20L208.9%2C104.1%20L213.1%2C107.5%20L216.6%2C111.2%20L219.7%2C114.9%20L222.7%2C118.4%20L225.8%2C121.6%20L229.3%2C124.4%20L233.5%2C127.1%20L238.3%2C129.9%20L243.5%2C132.9%20L248.7%2C136.4%20L253.5%2C140.4%20L257.4%2C145.0%20L259.8%2C150.0Z%22/%3E%3Cpath%20d%3D%22M300.5%2C150.0%20L300.5%2C157.8%20L298.0%2C165.4%20L293.4%2C172.5%20L287.4%2C179.0%20L280.5%2C184.7%20L273.2%2C189.9%20L266.0%2C194.6%20L259.1%2C199.1%20L252.3%2C203.5%20L245.5%2C207.8%20L238.5%2C211.9%20L231.1%2C215.6%20L223.2%2C218.7%20L214.9%2C221.0%20L206.2%2C222.4%20L197.4%2C223.0%20L188.6%2C223.0%20L180.0%2C222.5%20L171.5%2C222.0%20L163.0%2C221.5%20L154.3%2C221.2%20L145.2%2C220.9%20L135.6%2C220.5%20L125.7%2C219.7%20L115.7%2C218.0%20L106.1%2C215.3%20L97.5%2C211.1%20L90.3%2C205.7%20L85.1%2C199.2%20L82.0%2C191.9%20L80.9%2C184.2%20L81.3%2C176.6%20L82.8%2C169.3%20L84.6%2C162.5%20L86.1%2C156.1%20L87.0%2C150.0%20L86.9%2C144.0%20L86.2%2C137.8%20L85.2%2C131.2%20L84.5%2C124.2%20L84.5%2C117.0%20L85.9%2C109.8%20L89.0%2C102.8%20L93.7%2C96.3%20L99.9%2C90.7%20L107.4%2C85.9%20L115.7%2C81.9%20L124.4%2C78.7%20L133.4%2C76.0%20L142.5%2C73.8%20L151.7%2C71.8%20L161.0%2C70.2%20L170.4%2C69.1%20L180.0%2C68.7%20L189.5%2C69.3%20L198.8%2C71.1%20L207.5%2C74.0%20L215.3%2C78.1%20L222.2%2C82.9%20L228.1%2C88.3%20L233.3%2C93.6%20L238.0%2C98.8%20L242.9%2C103.4%20L248.4%2C107.5%20L254.7%2C111.2%20L262.0%2C114.9%20L270.1%2C118.9%20L278.4%2C123.5%20L286.3%2C128.9%20L293.1%2C135.2%20L298.0%2C142.4%20L300.5%2C150.0Z%22/%3E%3Cpath%20d%3D%22M340.1%2C150.0%20L338.5%2C160.3%20L334.0%2C170.1%20L327.4%2C179.2%20L319.3%2C187.6%20L310.6%2C195.1%20L301.8%2C202.1%20L293.2%2C208.7%20L284.9%2C215.2%20L276.6%2C221.5%20L268.0%2C227.6%20L258.8%2C233.3%20L248.8%2C238.2%20L238.0%2C242.2%20L226.7%2C245.0%20L215.0%2C246.6%20L203.2%2C247.3%20L191.5%2C247.4%20L180.0%2C247.2%20L168.5%2C247.0%20L156.9%2C247.0%20L144.9%2C247.2%20L132.2%2C247.2%20L119.0%2C246.8%20L105.6%2C245.4%20L92.5%2C242.5%20L80.4%2C237.9%20L70.0%2C231.5%20L62.0%2C223.4%20L56.6%2C214.0%20L53.8%2C204.0%20L53.2%2C193.8%20L54.1%2C183.9%20L55.7%2C174.7%20L57.0%2C166.1%20L57.5%2C157.9%20L56.8%2C150.0%20L55.1%2C141.9%20L52.8%2C133.4%20L50.6%2C124.3%20L49.3%2C114.8%20L49.7%2C105.0%20L52.2%2C95.3%20L57.0%2C86.2%20L64.1%2C77.9%20L72.9%2C70.7%20L83.2%2C64.5%20L94.3%2C59.3%20L105.9%2C54.9%20L117.7%2C51.0%20L129.7%2C47.6%20L141.9%2C44.7%20L154.4%2C42.4%20L167.1%2C41.1%20L180.0%2C41.0%20L192.7%2C42.5%20L204.8%2C45.6%20L216.1%2C50.3%20L226.0%2C56.3%20L234.7%2C63.1%20L242.3%2C70.1%20L249.2%2C76.8%20L256.1%2C82.8%20L263.5%2C88.1%20L272.0%2C92.8%20L281.8%2C97.2%20L292.7%2C101.8%20L304.2%2C107.1%20L315.5%2C113.5%20L325.5%2C121.1%20L333.4%2C130.0%20L338.4%2C139.7%20L340.1%2C150.0Z%22/%3E%3Cpath%20d%3D%22M377.7%2C150.0%20L374.0%2C162.6%20L367.4%2C174.5%20L358.9%2C185.5%20L349.3%2C195.6%20L339.4%2C205.1%20L329.8%2C214.0%20L320.4%2C222.8%20L311.0%2C231.4%20L301.3%2C239.8%20L290.8%2C247.8%20L279.2%2C254.9%20L266.5%2C261.0%20L252.8%2C265.6%20L238.4%2C268.8%20L223.7%2C270.7%20L209.0%2C271.7%20L194.4%2C272.3%20L180.0%2C272.7%20L165.4%2C273.3%20L150.4%2C274.2%20L134.8%2C275.0%20L118.4%2C275.4%20L101.6%2C274.6%20L84.9%2C272.0%20L69.1%2C267.3%20L55.1%2C260.2%20L43.8%2C250.9%20L35.6%2C239.8%20L30.6%2C227.5%20L28.4%2C214.8%20L28.3%2C202.4%20L29.2%2C190.7%20L30.1%2C179.8%20L30.0%2C169.6%20L28.5%2C159.8%20L25.5%2C150.0%20L21.6%2C139.7%20L17.5%2C128.8%20L14.3%2C117.1%20L12.9%2C105.0%20L14.1%2C92.7%20L18.2%2C80.8%20L25.3%2C69.7%20L34.9%2C59.8%20L46.4%2C51.0%20L59.3%2C43.5%20L73.0%2C36.8%20L87.2%2C30.9%20L101.7%2C25.6%20L116.6%2C20.9%20L131.9%2C16.9%20L147.7%2C14.1%20L163.8%2C12.9%20L180.0%2C13.5%20L195.8%2C16.4%20L210.6%2C21.3%20L224.1%2C28.0%20L236.1%2C35.9%20L246.6%2C44.3%20L256.0%2C52.5%20L265.1%2C60.0%20L274.7%2C66.4%20L285.3%2C72.0%20L297.5%2C77.0%20L311.2%2C82.0%20L325.8%2C87.6%20L340.5%2C94.5%20L354.2%2C103.0%20L365.5%2C113.2%20L373.5%2C124.7%20L377.6%2C137.2%20L377.7%2C150.0Z%22/%3E%3Cpath%20d%3D%22M412.5%2C150.0%20L406.7%2C164.7%20L398.2%2C178.5%20L388.3%2C191.3%20L377.9%2C203.3%20L367.6%2C214.8%20L357.6%2C226.0%20L347.7%2C237.0%20L337.4%2C247.9%20L326.2%2C258.3%20L313.7%2C268.0%20L299.6%2C276.5%20L284.0%2C283.4%20L267.3%2C288.7%20L249.9%2C292.4%20L232.4%2C294.8%20L214.9%2C296.5%20L197.5%2C298.0%20L180.0%2C299.6%20L162.1%2C301.5%20L143.5%2C303.5%20L124.0%2C304.9%20L103.8%2C305.2%20L83.4%2C303.4%20L63.8%2C299.1%20L46.0%2C291.8%20L30.9%2C281.6%20L19.3%2C269.0%20L11.5%2C254.7%20L7.2%2C239.6%20L5.5%2C224.6%20L5.4%2C210.3%20L5.5%2C197.0%20L4.7%2C184.8%20L2.3%2C173.2%20L-1.9%2C161.8%20L-7.6%2C150.0%20L-13.9%2C137.4%20L-19.5%2C123.9%20L-23.2%2C109.7%20L-24.0%2C95.0%20L-21.4%2C80.4%20L-15.2%2C66.5%20L-5.8%2C53.7%20L6.4%2C42.1%20L20.4%2C31.8%20L35.7%2C22.6%20L51.7%2C14.3%20L68.2%2C6.6%20L85.4%2C-0.3%20L103.1%2C-6.4%20L121.7%2C-11.3%20L140.9%2C-14.3%20L160.5%2C-15.0%20L180.0%2C-13.1%20L198.7%2C-8.6%20L216.1%2C-1.7%20L231.7%2C7.0%20L245.6%2C16.5%20L258.0%2C26.0%20L269.8%2C34.8%20L281.6%2C42.5%20L294.6%2C48.9%20L309.1%2C54.3%20L325.5%2C59.6%20L343.2%2C65.4%20L361.4%2C72.4%20L378.7%2C81.4%20L393.8%2C92.4%20L405.3%2C105.3%20L412.4%2C119.7%20L414.7%2C134.8%20L412.5%2C150.0Z%22/%3E%3Cpath%20d%3D%22M444.4%2C150.0%20L436.6%2C166.6%20L426.8%2C182.2%20L416.2%2C196.9%20L405.7%2C210.9%20L395.6%2C224.5%20L385.7%2C238.0%20L375.4%2C251.4%20L364.2%2C264.5%20L351.3%2C276.9%20L336.4%2C288.1%20L319.6%2C297.7%20L301.1%2C305.4%20L281.5%2C311.3%20L261.4%2C315.7%20L241.2%2C319.1%20L221.0%2C322.1%20L200.7%2C325.1%20L180.0%2C328.5%20L158.5%2C331.9%20L136.0%2C334.9%20L112.5%2C336.6%20L88.5%2C336.2%20L65.0%2C332.7%20L43.0%2C325.8%20L23.8%2C315.3%20L8.3%2C301.6%20L-2.9%2C285.5%20L-10.1%2C268.1%20L-13.8%2C250.5%20L-15.4%2C233.6%20L-16.4%2C217.8%20L-18.1%2C203.4%20L-21.5%2C190.0%20L-27.1%2C177.1%20L-34.6%2C163.9%20L-43.1%2C150.0%20L-51.3%2C135.0%20L-57.8%2C118.9%20L-61.3%2C102.1%20L-60.9%2C85.1%20L-56.3%2C68.4%20L-47.7%2C52.6%20L-35.8%2C38.1%20L-21.3%2C24.9%20L-5.2%2C12.8%20L12.1%2C1.8%20L30.1%2C-8.5%20L49.0%2C-18.1%20L68.7%2C-26.8%20L89.5%2C-34.1%20L111.5%2C-39.5%20L134.2%2C-42.2%20L157.3%2C-42.0%20L180.0%2C-38.4%20L201.5%2C-31.9%20L221.2%2C-23.1%20L238.9%2C-12.9%20L254.8%2C-2.3%20L269.6%2C7.7%20L284.2%2C16.4%20L299.6%2C23.5%20L316.6%2C29.4%20L335.6%2C34.8%20L356.3%2C40.4%20L377.9%2C47.4%20L398.9%2C56.4%20L417.9%2C67.8%20L433.2%2C81.7%20L443.8%2C97.6%20L448.9%2C114.9%20L448.9%2C132.6%20L444.4%2C150.0Z%22/%3E%3Cpath%20d%3D%22M916.5%2C420.0%20L915.4%2C422.3%20L914.1%2C424.5%20L912.8%2C426.5%20L911.6%2C428.5%20L910.5%2C430.5%20L909.3%2C432.5%20L907.9%2C434.5%20L906.4%2C436.4%20L904.5%2C438.1%20L902.3%2C439.7%20L899.9%2C441.0%20L897.2%2C442.1%20L894.4%2C442.9%20L891.6%2C443.6%20L888.8%2C444.3%20L885.9%2C444.9%20L883.0%2C445.6%20L880.0%2C446.3%20L876.8%2C446.9%20L873.5%2C447.4%20L870.0%2C447.6%20L866.6%2C447.3%20L863.3%2C446.5%20L860.4%2C445.2%20L857.9%2C443.3%20L856.1%2C441.1%20L854.8%2C438.7%20L854.0%2C436.2%20L853.5%2C433.7%20L853.2%2C431.5%20L852.8%2C429.4%20L852.2%2C427.5%20L851.2%2C425.7%20L850.0%2C423.9%20L848.7%2C422.0%20L847.3%2C420.0%20L846.1%2C417.8%20L845.3%2C415.5%20L845.1%2C413.1%20L845.4%2C410.7%20L846.3%2C408.4%20L847.7%2C406.2%20L849.4%2C404.2%20L851.5%2C402.3%20L853.7%2C400.5%20L856.1%2C398.9%20L858.5%2C397.3%20L861.2%2C395.8%20L864.0%2C394.5%20L867.0%2C393.5%20L870.2%2C392.9%20L873.5%2C392.6%20L876.8%2C392.9%20L880.0%2C393.6%20L883.0%2C394.6%20L885.7%2C395.9%20L888.2%2C397.3%20L890.5%2C398.6%20L892.7%2C399.8%20L895.0%2C400.7%20L897.5%2C401.5%20L900.3%2C402.1%20L903.3%2C402.8%20L906.4%2C403.6%20L909.5%2C404.7%20L912.3%2C406.2%20L914.7%2C408.0%20L916.5%2C410.2%20L917.5%2C412.6%20L917.7%2C415.1%20L917.4%2C417.6%20L916.5%2C420.0Z%22/%3E%3Cpath%20d%3D%22M950.8%2C420.0%20L948.7%2C424.5%20L946.5%2C428.7%20L944.5%2C432.8%20L942.6%2C436.9%20L940.6%2C440.9%20L938.5%2C445.0%20L935.9%2C449.0%20L932.7%2C452.7%20L928.8%2C456.2%20L924.4%2C459.2%20L919.4%2C461.7%20L914.2%2C463.8%20L908.7%2C465.7%20L903.3%2C467.3%20L897.7%2C469.0%20L892.1%2C470.7%20L886.2%2C472.5%20L880.0%2C474.2%20L873.4%2C475.6%20L866.6%2C476.4%20L859.6%2C476.4%20L852.8%2C475.4%20L846.5%2C473.2%20L841.0%2C470.0%20L836.7%2C465.8%20L833.4%2C461.1%20L831.2%2C456.1%20L829.8%2C451.2%20L828.8%2C446.6%20L827.7%2C442.4%20L826.3%2C438.5%20L824.4%2C435.0%20L821.8%2C431.5%20L818.9%2C428.0%20L815.8%2C424.2%20L813.0%2C420.0%20L810.9%2C415.5%20L809.7%2C410.8%20L809.7%2C406.0%20L810.8%2C401.3%20L812.9%2C396.8%20L815.9%2C392.6%20L819.4%2C388.6%20L823.4%2C384.8%20L827.6%2C381.2%20L832.1%2C377.7%20L836.9%2C374.4%20L842.1%2C371.4%20L847.8%2C368.9%20L854.0%2C367.0%20L860.4%2C365.9%20L867.1%2C365.8%20L873.7%2C366.7%20L880.0%2C368.3%20L885.8%2C370.5%20L891.2%2C372.9%20L896.1%2C375.4%20L900.9%2C377.5%20L905.6%2C379.3%20L910.7%2C380.6%20L916.2%2C381.7%20L922.2%2C382.7%20L928.5%2C384.0%20L934.9%2C385.9%20L940.9%2C388.4%20L946.1%2C391.7%20L950.1%2C395.8%20L952.8%2C400.4%20L953.9%2C405.3%20L953.8%2C410.4%20L952.6%2C415.3%20L950.8%2C420.0Z%22/%3E%3Cpath%20d%3D%22M983.2%2C420.0%20L980.5%2C426.5%20L977.9%2C432.8%20L975.5%2C439.0%20L973.2%2C445.1%20L970.7%2C451.3%20L967.6%2C457.5%20L963.7%2C463.4%20L958.7%2C468.9%20L952.8%2C473.9%20L946.0%2C478.2%20L938.6%2C482.0%20L930.9%2C485.3%20L923.0%2C488.4%20L915.1%2C491.4%20L907.0%2C494.5%20L898.5%2C497.8%20L889.6%2C500.9%20L880.0%2C503.8%20L869.9%2C505.9%20L859.4%2C506.7%20L848.9%2C506.1%20L838.9%2C503.6%20L830.0%2C499.5%20L822.5%2C493.8%20L816.6%2C487.1%20L812.3%2C479.7%20L809.3%2C472.4%20L807.1%2C465.3%20L805.1%2C458.9%20L802.7%2C453.1%20L799.5%2C447.8%20L795.5%2C442.8%20L790.9%2C437.7%20L785.9%2C432.3%20L781.2%2C426.4%20L777.3%2C420.0%20L774.7%2C413.2%20L773.7%2C406.1%20L774.4%2C399.0%20L776.7%2C392.2%20L780.3%2C385.6%20L784.8%2C379.3%20L789.9%2C373.3%20L795.5%2C367.5%20L801.5%2C361.9%20L808.0%2C356.5%20L815.1%2C351.4%20L823.0%2C346.9%20L831.7%2C343.3%20L841.1%2C340.9%20L851.0%2C339.8%20L861.0%2C340.1%20L870.8%2C341.7%20L880.0%2C344.3%20L888.6%2C347.5%20L896.5%2C350.7%20L904.0%2C353.7%20L911.4%2C356.0%20L919.2%2C357.8%20L927.5%2C359.0%20L936.6%2C360.2%20L946.1%2C361.6%20L955.9%2C363.8%20L965.3%2C367.0%20L973.7%2C371.4%20L980.6%2C377.0%20L985.4%2C383.6%20L988.1%2C390.9%20L988.8%2C398.4%20L987.9%2C405.9%20L985.8%2C413.1%20L983.2%2C420.0Z%22/%3E%3Cpath%20d%3D%22M1014.3%2C420.0%20L1011.4%2C428.5%20L1008.9%2C436.8%20L1006.6%2C445.1%20L1004.0%2C453.4%20L1000.8%2C461.7%20L996.6%2C469.9%20L991.1%2C477.6%20L984.2%2C484.7%20L976.0%2C491.1%20L967.0%2C496.8%20L957.4%2C501.9%20L947.5%2C506.6%20L937.5%2C511.3%20L927.3%2C516.2%20L916.6%2C521.2%20L905.3%2C526.3%20L893.1%2C531.0%20L880.0%2C534.9%20L866.1%2C537.3%20L852.0%2C537.6%20L838.2%2C535.6%20L825.4%2C531.2%20L814.2%2C524.5%20L805.0%2C516.2%20L798.0%2C506.8%20L792.7%2C497.1%20L788.7%2C487.6%20L785.2%2C478.9%20L781.5%2C471.1%20L777.0%2C464.1%20L771.4%2C457.5%20L764.9%2C451.0%20L757.8%2C444.2%20L750.9%2C436.9%20L744.9%2C428.8%20L740.5%2C420.0%20L738.0%2C410.8%20L737.8%2C401.4%20L739.7%2C392.2%20L743.4%2C383.2%20L748.4%2C374.5%20L754.2%2C366.2%20L760.7%2C358.1%20L767.7%2C350.2%20L775.4%2C342.5%20L783.9%2C335.1%20L793.4%2C328.4%20L804.1%2C322.6%20L816.0%2C318.3%20L828.7%2C315.7%20L842.0%2C314.9%20L855.2%2C315.9%20L868.0%2C318.4%20L880.0%2C321.7%20L891.2%2C325.4%20L901.7%2C328.7%20L912.0%2C331.5%20L922.6%2C333.3%20L933.8%2C334.5%20L945.9%2C335.5%20L958.8%2C336.6%20L972.1%2C338.7%20L985.2%2C342.1%20L997.1%2C347.2%20L1007.3%2C354.0%20L1014.9%2C362.3%20L1019.8%2C371.7%20L1021.9%2C381.7%20L1021.8%2C391.9%20L1020.0%2C401.7%20L1017.3%2C411.1%20L1014.3%2C420.0Z%22/%3E%3Cpath%20d%3D%22M1044.8%2C420.0%20L1042.3%2C430.5%20L1040.2%2C440.9%20L1037.9%2C451.3%20L1035.0%2C461.8%20L1030.9%2C472.1%20L1025.2%2C482.1%20L1017.8%2C491.5%20L1008.8%2C500.1%20L998.6%2C507.8%20L987.5%2C514.9%20L976.0%2C521.6%20L964.3%2C528.2%20L952.4%2C535.0%20L940.0%2C542.1%20L926.8%2C549.4%20L912.5%2C556.4%20L896.8%2C562.5%20L880.0%2C567.0%20L862.4%2C569.1%20L844.7%2C568.3%20L827.8%2C564.3%20L812.5%2C557.3%20L799.5%2C547.9%20L788.9%2C536.8%20L780.7%2C525.0%20L774.2%2C513.4%20L768.7%2C502.4%20L763.2%2C492.6%20L757.0%2C483.8%20L749.7%2C475.7%20L741.2%2C468.0%20L731.9%2C459.9%20L722.6%2C451.2%20L714.1%2C441.7%20L707.4%2C431.2%20L703.1%2C420.0%20L701.5%2C408.4%20L702.5%2C396.8%20L705.8%2C385.4%20L710.8%2C374.4%20L717.0%2C363.7%20L723.9%2C353.3%20L731.5%2C343.0%20L739.8%2C332.9%20L749.1%2C323.1%20L759.7%2C313.8%20L771.9%2C305.6%20L785.7%2C299.0%20L800.9%2C294.4%20L817.1%2C292.0%20L833.6%2C291.8%20L849.9%2C293.5%20L865.4%2C296.5%20L880.0%2C300.1%20L893.8%2C303.6%20L907.1%2C306.3%20L920.5%2C308.0%20L934.6%2C308.8%20L949.8%2C309.2%20L966.0%2C309.7%20L982.9%2C311.2%20L999.8%2C314.3%20L1015.6%2C319.5%20L1029.5%2C327.1%20L1040.6%2C336.7%20L1048.3%2C348.0%20L1052.6%2C360.4%20L1053.9%2C373.1%20L1052.9%2C385.7%20L1050.6%2C397.7%20L1047.6%2C409.1%20L1044.8%2C420.0Z%22/%3E%3Cpath%20d%3D%22M1075.6%2C420.0%20L1073.8%2C432.6%20L1072.0%2C445.1%20L1069.7%2C457.7%20L1066.1%2C470.2%20L1060.7%2C482.4%20L1053.2%2C494.1%20L1043.8%2C504.9%20L1032.7%2C514.9%20L1020.6%2C524.1%20L1007.8%2C532.8%20L994.8%2C541.4%20L981.6%2C550.3%20L967.9%2C559.7%20L953.4%2C569.4%20L937.5%2C579.0%20L920.0%2C587.8%20L900.7%2C595.0%20L880.0%2C599.4%20L858.7%2C600.5%20L837.7%2C597.7%20L818.1%2C591.2%20L800.7%2C581.4%20L786.1%2C569.2%20L774.2%2C555.8%20L764.6%2C542.1%20L756.4%2C529.1%20L748.6%2C517.3%20L740.3%2C506.8%20L730.9%2C497.3%20L720.1%2C488.4%20L708.4%2C479.3%20L696.4%2C469.5%20L685.2%2C458.7%20L675.9%2C446.7%20L669.3%2C433.7%20L665.7%2C420.0%20L665.4%2C406.1%20L667.8%2C392.3%20L672.5%2C378.8%20L678.6%2C365.7%20L685.7%2C352.9%20L693.5%2C340.2%20L702.1%2C327.7%20L711.7%2C315.4%20L722.9%2C303.6%20L735.9%2C292.8%20L751.1%2C283.6%20L768.2%2C276.6%20L786.9%2C272.1%20L806.4%2C270.2%20L826.0%2C270.7%20L845.0%2C272.8%20L863.0%2C275.9%20L880.0%2C279.0%20L896.4%2C281.4%20L912.7%2C282.6%20L929.7%2C282.7%20L947.8%2C282.0%20L967.2%2C281.4%20L987.7%2C281.8%20L1008.5%2C284.1%20L1028.5%2C288.9%20L1046.6%2C296.6%20L1061.7%2C307.1%20L1072.9%2C319.9%20L1080.1%2C334.4%20L1083.6%2C349.7%20L1084.1%2C365.0%20L1082.7%2C379.8%20L1080.3%2C393.8%20L1077.7%2C407.2%20L1075.6%2C420.0Z%22/%3E%3Cpath%20d%3D%22M1107.2%2C420.0%20L1106.2%2C434.7%20L1104.7%2C449.3%20L1101.8%2C464.0%20L1097.0%2C478.5%20L1089.8%2C492.5%20L1080.3%2C505.7%20L1068.8%2C517.9%20L1055.9%2C529.3%20L1042.3%2C540.2%20L1028.3%2C550.9%20L1014.2%2C561.9%20L999.7%2C573.6%20L984.4%2C585.8%20L967.5%2C598.2%20L948.7%2C610.0%20L927.6%2C620.1%20L904.5%2C627.5%20L880.0%2C631.1%20L855.2%2C630.3%20L831.2%2C625.0%20L809.2%2C615.6%20L790.1%2C603.0%20L773.9%2C588.5%20L760.5%2C573.3%20L749.1%2C558.5%20L738.5%2C545.0%20L727.6%2C532.9%20L715.7%2C522.1%20L702.4%2C512.1%20L687.9%2C502.2%20L673.0%2C491.5%20L658.7%2C479.7%20L646.4%2C466.4%20L636.9%2C451.8%20L631.0%2C436.1%20L628.8%2C420.0%20L629.9%2C403.8%20L633.7%2C387.8%20L639.5%2C372.3%20L646.4%2C357.0%20L654.1%2C342.0%20L662.6%2C327.0%20L672.2%2C312.2%20L683.5%2C297.8%20L696.9%2C284.4%20L712.9%2C272.5%20L731.4%2C262.8%20L752.1%2C255.8%20L774.1%2C251.8%20L796.7%2C250.6%20L819.0%2C251.4%20L840.4%2C253.5%20L860.6%2C255.9%20L880.0%2C257.5%20L899.1%2C257.9%20L918.8%2C256.9%20L939.7%2C254.9%20L962.2%2C252.8%20L986.1%2C251.5%20L1010.8%2C252.2%20L1035.1%2C255.9%20L1057.7%2C263.2%20L1077.2%2C273.9%20L1092.7%2C287.8%20L1103.6%2C304.0%20L1110.1%2C321.6%20L1112.9%2C339.6%20L1113.0%2C357.2%20L1111.7%2C374.0%20L1109.9%2C390.0%20L1108.4%2C405.2%20L1107.2%2C420.0Z%22/%3E%3Cpath%20d%3D%22M1140.2%2C420.0%20L1139.8%2C436.8%20L1138.0%2C453.7%20L1134.1%2C470.4%20L1127.6%2C486.7%20L1118.3%2C502.3%20L1106.6%2C516.9%20L1093.3%2C530.6%20L1078.9%2C543.6%20L1064.3%2C556.5%20L1049.5%2C569.6%20L1034.6%2C583.5%20L1018.9%2C598.2%20L1001.7%2C613.4%20L982.3%2C628.3%20L960.2%2C641.7%20L935.3%2C652.4%20L908.2%2C659.2%20L880.0%2C661.0%20L851.9%2C657.7%20L825.4%2C649.5%20L801.4%2C637.3%20L780.6%2C622.3%20L762.9%2C606.1%20L747.6%2C589.9%20L733.5%2C574.9%20L719.7%2C561.5%20L704.9%2C549.7%20L688.7%2C538.9%20L671.2%2C528.3%20L653.0%2C517.1%20L635.3%2C504.5%20L619.4%2C490.2%20L606.6%2C474.3%20L597.8%2C456.9%20L593.1%2C438.6%20L592.4%2C420.0%20L594.9%2C401.5%20L599.8%2C383.4%20L606.2%2C365.7%20L613.6%2C348.2%20L621.8%2C330.8%20L631.1%2C313.5%20L642.0%2C296.6%20L655.4%2C280.4%20L671.7%2C265.7%20L691.1%2C253.2%20L713.2%2C243.6%20L737.5%2C237.1%20L762.8%2C233.8%20L788.1%2C232.9%20L812.6%2C233.7%20L835.9%2C234.9%20L858.2%2C235.6%20L880.0%2C234.9%20L902.1%2C232.5%20L925.5%2C228.8%20L950.7%2C224.6%20L977.7%2C221.2%20L1006.0%2C219.8%20L1034.6%2C221.7%20L1061.8%2C227.6%20L1086.3%2C237.9%20L1106.6%2C252.2%20L1121.9%2C269.6%20L1132.3%2C289.1%20L1138.2%2C309.6%20L1140.7%2C329.9%20L1141.2%2C349.6%20L1140.7%2C368.3%20L1140.3%2C386.0%20L1140.2%2C403.1%20L1140.2%2C420.0Z%22/%3E%3Cpath%20d%3D%22M593.1%2C40.0%20L592.5%2C42.1%20L592.1%2C44.2%20L591.6%2C46.3%20L591.0%2C48.4%20L590.2%2C50.4%20L589.1%2C52.4%20L587.6%2C54.3%20L585.8%2C56.1%20L583.8%2C57.6%20L581.5%2C59.0%20L579.2%2C60.3%20L576.9%2C61.6%20L574.5%2C63.0%20L572.0%2C64.3%20L569.3%2C65.8%20L566.5%2C67.1%20L563.4%2C68.4%20L560.0%2C69.3%20L556.5%2C69.7%20L552.9%2C69.6%20L549.6%2C68.9%20L546.5%2C67.5%20L543.8%2C65.7%20L541.7%2C63.5%20L540.0%2C61.1%20L538.7%2C58.8%20L537.7%2C56.6%20L536.6%2C54.5%20L535.4%2C52.7%20L534.0%2C51.1%20L532.4%2C49.5%20L530.5%2C47.9%20L528.7%2C46.2%20L527.0%2C44.3%20L525.6%2C42.2%20L524.7%2C40.0%20L524.3%2C37.7%20L524.5%2C35.4%20L525.1%2C33.1%20L526.1%2C30.9%20L527.3%2C28.7%20L528.7%2C26.6%20L530.3%2C24.6%20L532.0%2C22.6%20L533.8%2C20.6%20L535.9%2C18.8%20L538.4%2C17.1%20L541.1%2C15.8%20L544.1%2C14.8%20L547.4%2C14.3%20L550.7%2C14.2%20L553.9%2C14.6%20L557.1%2C15.2%20L560.0%2C15.9%20L562.8%2C16.7%20L565.4%2C17.3%20L568.1%2C17.7%20L570.9%2C17.9%20L573.9%2C18.0%20L577.1%2C18.1%20L580.4%2C18.4%20L583.8%2C19.0%20L587.0%2C20.0%20L589.8%2C21.5%20L592.1%2C23.4%20L593.7%2C25.6%20L594.6%2C28.0%20L594.9%2C30.6%20L594.8%2C33.1%20L594.3%2C35.5%20L593.7%2C37.8%20L593.1%2C40.0Z%22/%3E%3Cpath%20d%3D%22M625.3%2C40.0%20L624.6%2C44.2%20L624.0%2C48.4%20L623.2%2C52.5%20L622.0%2C56.7%20L620.3%2C60.8%20L617.8%2C64.7%20L614.7%2C68.4%20L611.0%2C71.7%20L607.0%2C74.8%20L602.7%2C77.7%20L598.3%2C80.5%20L593.8%2C83.4%20L589.2%2C86.4%20L584.4%2C89.6%20L579.1%2C92.8%20L573.3%2C95.7%20L566.9%2C98.1%20L560.0%2C99.6%20L552.9%2C100.1%20L545.9%2C99.3%20L539.3%2C97.2%20L533.4%2C94.0%20L528.5%2C90.0%20L524.5%2C85.5%20L521.3%2C80.9%20L518.6%2C76.5%20L516.1%2C72.5%20L513.5%2C68.9%20L510.4%2C65.7%20L507.0%2C62.7%20L503.1%2C59.6%20L499.2%2C56.4%20L495.4%2C52.8%20L492.3%2C48.8%20L490.0%2C44.5%20L488.7%2C40.0%20L488.5%2C35.4%20L489.2%2C30.8%20L490.7%2C26.2%20L492.8%2C21.9%20L495.2%2C17.6%20L497.8%2C13.4%20L500.7%2C9.2%20L503.9%2C5.1%20L507.6%2C1.2%20L511.9%2C-2.4%20L517.0%2C-5.5%20L522.6%2C-7.9%20L528.8%2C-9.5%20L535.3%2C-10.2%20L541.9%2C-10.1%20L548.3%2C-9.3%20L554.3%2C-8.3%20L560.0%2C-7.2%20L565.5%2C-6.3%20L570.9%2C-5.7%20L576.5%2C-5.6%20L582.4%2C-5.7%20L588.8%2C-5.8%20L595.6%2C-5.7%20L602.5%2C-5.0%20L609.2%2C-3.5%20L615.3%2C-1.0%20L620.5%2C2.4%20L624.3%2C6.6%20L626.9%2C11.4%20L628.1%2C16.5%20L628.3%2C21.6%20L627.9%2C26.5%20L627.0%2C31.2%20L626.1%2C35.7%20L625.3%2C40.0Z%22/%3E%3Cpath%20d%3D%22M657.4%2C40.0%20L656.9%2C46.3%20L656.2%2C52.6%20L655.0%2C58.9%20L653.0%2C65.1%20L650.0%2C71.1%20L646.0%2C76.8%20L641.1%2C82.1%20L635.6%2C87.0%20L629.7%2C91.6%20L623.6%2C96.1%20L617.5%2C100.8%20L611.2%2C105.7%20L604.6%2C110.8%20L597.4%2C116.0%20L589.3%2C121.1%20L580.3%2C125.4%20L570.5%2C128.7%20L560.0%2C130.4%20L549.3%2C130.2%20L539.0%2C128.1%20L529.5%2C124.2%20L521.2%2C118.9%20L514.2%2C112.7%20L508.5%2C106.1%20L503.6%2C99.7%20L499.2%2C93.7%20L494.7%2C88.4%20L489.8%2C83.7%20L484.2%2C79.3%20L478.2%2C75.0%20L471.8%2C70.4%20L465.7%2C65.4%20L460.4%2C59.8%20L456.2%2C53.6%20L453.5%2C46.9%20L452.4%2C40.0%20L452.8%2C33.1%20L454.4%2C26.2%20L456.8%2C19.5%20L459.8%2C13.0%20L463.1%2C6.5%20L466.8%2C0.2%20L471.0%2C-6.2%20L475.8%2C-12.3%20L481.5%2C-18.1%20L488.3%2C-23.3%20L496.1%2C-27.6%20L504.9%2C-30.6%20L514.4%2C-32.5%20L524.1%2C-33.1%20L533.7%2C-32.7%20L542.9%2C-31.8%20L551.7%2C-30.6%20L560.0%2C-29.8%20L568.2%2C-29.4%20L576.6%2C-29.6%20L585.4%2C-30.3%20L595.0%2C-31.1%20L605.1%2C-31.7%20L615.6%2C-31.4%20L626.1%2C-29.9%20L635.8%2C-26.9%20L644.3%2C-22.5%20L651.1%2C-16.7%20L656.0%2C-9.8%20L658.9%2C-2.3%20L660.2%2C5.4%20L660.3%2C13.0%20L659.6%2C20.2%20L658.8%2C27.1%20L658.0%2C33.6%20L657.4%2C40.0Z%22/%3E%3Cpath%20d%3D%22M690.0%2C40.0%20L689.8%2C48.4%20L688.9%2C56.8%20L687.0%2C65.2%20L683.8%2C73.4%20L679.3%2C81.2%20L673.5%2C88.6%20L666.9%2C95.4%20L659.6%2C101.9%20L652.2%2C108.3%20L644.7%2C114.8%20L637.1%2C121.6%20L629.2%2C128.8%20L620.6%2C136.3%20L611.0%2C143.7%20L600.0%2C150.4%20L587.6%2C155.9%20L574.1%2C159.5%20L560.0%2C160.6%20L545.9%2C159.2%20L532.6%2C155.3%20L520.5%2C149.3%20L510.0%2C141.8%20L501.1%2C133.6%20L493.4%2C125.4%20L486.5%2C117.7%20L479.8%2C110.8%20L472.6%2C104.7%20L464.8%2C99.2%20L456.2%2C93.8%20L447.2%2C88.2%20L438.4%2C82.0%20L430.4%2C74.9%20L423.9%2C67.0%20L419.2%2C58.4%20L416.7%2C49.3%20L416.2%2C40.0%20L417.4%2C30.8%20L419.8%2C21.7%20L423.0%2C12.8%20L426.8%2C4.1%20L430.9%2C-4.6%20L435.6%2C-13.2%20L441.1%2C-21.7%20L447.7%2C-29.8%20L455.7%2C-37.2%20L465.3%2C-43.6%20L476.3%2C-48.6%20L488.3%2C-51.9%20L501.0%2C-53.7%20L513.7%2C-54.2%20L526.1%2C-53.7%20L537.9%2C-53.0%20L549.1%2C-52.4%20L560.0%2C-52.5%20L571.0%2C-53.5%20L582.6%2C-55.1%20L595.1%2C-57.0%20L608.5%2C-58.7%20L622.6%2C-59.4%20L636.8%2C-58.6%20L650.5%2C-55.8%20L662.9%2C-50.8%20L673.2%2C-43.9%20L681.1%2C-35.3%20L686.5%2C-25.6%20L689.6%2C-15.4%20L690.9%2C-5.2%20L691.0%2C4.7%20L690.7%2C14.1%20L690.3%2C23.0%20L690.1%2C31.6%20L690.0%2C40.0Z%22/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat}
+.mapa-curso__cab{display:flex;gap:20px;align-items:flex-start;justify-content:space-between}
+.mapa-curso__cab h2{font-size:clamp(28px,4.4vw,40px)}
+.mapa-curso__cab p{max-width:640px}
+.rosa{flex:none;opacity:.55;transform:rotate(-12deg);margin:-10px -6px 0 0}
+.cards3--claro>div{background:rgba(255,255,255,.82)}
+.cartao--mentor{flex-direction:row;align-items:center;gap:18px;margin-top:18px}
+.cartao--mentor>span:last-child{display:flex;flex-direction:column;gap:4px}
+.cartao__k{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--ouro)}
+/* rota: cinco paradas ligadas */
+.rota{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0 10px}
+.rota__linha{position:absolute;left:0;top:0;width:100%;height:160px;overflow:visible;pointer-events:none}
+.rota__linha path{fill:none;stroke:var(--lar);stroke-width:3;stroke-dasharray:2 9;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.parada{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;text-decoration:none;color:var(--corpo)}
+.parada:nth-of-type(even){margin-top:62px}
+.parada__foto{position:relative;width:96px;height:96px;border-radius:50%;background:var(--tom) center/cover no-repeat;border:5px solid var(--tom);box-shadow:0 0 0 5px var(--papel);margin-bottom:8px;transition:transform .2s}
+a.parada:hover .parada__foto{transform:scale(1.06)}
+.parada__n{position:absolute;left:-8px;bottom:-4px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--escuro);color:#fff;font-weight:700;font-size:16px;border:3px solid #fff}
+.parada__ic{position:absolute;right:-10px;top:-8px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--tom);border:3px solid #fff}
+.parada__k{font-size:12px;font-weight:700;letter-spacing:1.6px;color:var(--tom)}
+.parada b{color:var(--tinta);font-size:16px;line-height:1.25}
+.parada em{font-style:normal;font-size:13.5px;line-height:1.35}
+.parada__c{margin-top:6px;font-size:13px;font-weight:700;color:var(--tom);min-height:1.4em}
+.parada.aqui .parada__foto{box-shadow:0 0 0 5px var(--papel),0 0 0 9px var(--lar);animation:pulso 2.4s ease-in-out infinite}
+@keyframes pulso{50%{box-shadow:0 0 0 5px var(--papel),0 0 0 14px rgba(229,102,44,.35)}}
+.parada.feito .parada__n,.parada--feita .parada__n{background:var(--tom)}
+.parada--feita .parada__c:before{content:"✓ "}
+.parada--breve .parada__foto{filter:grayscale(.7) brightness(1.12) contrast(.85)}
+.parada--breve .parada__c{color:var(--fraco)}
+.rota__fases{grid-column:1/-1;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:14px}
+.rota__fases span{border-top:2px solid var(--ouro);padding-top:8px;text-align:center;font-size:12px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#8A6C2C;position:relative}
+.rota__fases span:before,.rota__fases span:after{content:"";position:absolute;top:-7px;width:2px;height:12px;background:var(--ouro)}
+.rota__fases span:before{left:0}.rota__fases span:after{right:0}
+.rota--grande .rota__linha{height:200px}
+.rota--grande .parada__foto{width:124px;height:124px}
+.rota--grande .parada:nth-of-type(even){margin-top:76px}
+.rota--grande .parada b{font-size:17px}
+/* títulos de bloco com ícone */
+.bloco__t{display:flex;align-items:center;gap:16px;margin-bottom:.5em}
+.bloco__t h2{margin:0}
+.bloco__t .disco{width:58px;height:58px}
+/* complete a frase */
+.completar{margin:22px 0 0;padding:26px 28px;border-radius:16px;background:var(--escuro);color:#EADFD3;border-left:8px solid var(--tom)}
+.completar__k{font-size:13px;font-weight:700;letter-spacing:3px;color:var(--ouro)}
+.completar__f{font-size:clamp(24px,3.6vw,32px);font-weight:700;color:#FBEEE5;line-height:1.3;margin:8px 0 4px}
+.completar__l{display:inline-block;width:5.5em;border-bottom:4px solid var(--lar);vertical-align:-4px}
+.completar label{color:#FBEEE5}
+.completar input{background:#fff}
+details.resposta{margin:16px 0 0;border-top:1px solid rgba(255,255,255,.18);padding-top:12px}
+details.resposta summary{color:var(--ouro)}
+details.resposta p{margin:10px 0 0}
+details.resposta b{color:#FFB48A}
+@media(max-width:760px){
+  .entrada{grid-template-columns:1fr}
+  .capa--foto{min-height:300px;background-position:70% center}
+  .rota{grid-template-columns:1fr;gap:16px;padding-left:4px}
+  .rota__linha{display:none}
+  .rota:before{content:"";position:absolute;left:46px;top:30px;bottom:60px;border-left:3px dotted var(--lar)}
+  .parada,.rota--grande .parada{display:grid;grid-template-columns:100px 1fr;column-gap:12px;align-items:start;text-align:left;margin-top:0!important}
+  .parada__foto,.rota--grande .parada__foto{width:84px;height:84px;margin:0;grid-row:1/span 4}
+  .parada>*:not(.parada__foto){grid-column:2;margin:0}
+  .parada__k{margin-top:4px!important}
+  .rota__fases{display:none}
+  .mapa-curso{padding:26px 18px}
+  .rosa{display:none}
+}
+@media print{.rota__linha,.rosa,.entrada,.conta,.aviso-conta{display:none!important}.parada.aqui .parada__foto{animation:none}}
+
+input[type=email],input[type=password]{width:100%;font:inherit;font-size:18px;color:var(--tinta);background:#fff;border:1.5px solid #CFC4B5;border-radius:10px;padding:12px 14px}
+.entrada__f input[name=codigo]{letter-spacing:10px;max-width:200px}
+.cartao--mentor span{letter-spacing:normal;opacity:1;font-size:inherit;font-weight:inherit}
+.cartao--mentor .cartao__k{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--ouro)}
+.cartao--mentor b{font-size:22px}
+.cartao--mentor i{opacity:.85}
+/* ---------- dúvidas para o mentor e painel ---------- */
+.duvidas{margin-top:14px}
+.duvidas__form{margin-top:10px;background:#FBF7F1;border:2px solid #E2D9CD;border-radius:14px;padding:16px}
+.duvidas__l{display:block;font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--tinta)}
+.duvidas__l textarea,.duvidas__l input{display:block;width:100%;margin-top:8px;font:inherit;font-size:16px;font-weight:400;border:2px solid #D9CFC2;border-radius:10px;padding:10px 12px;background:#fff;box-sizing:border-box}
+.duvidas__acoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center}
+.duvidas__msg{font-size:15px;color:#5A5045;margin:8px 0 0}
+.duvida{margin-top:12px;border-radius:14px;overflow:hidden;border:2px solid #EFE7DC;background:#fff}
+.duvida__p,.duvida__r,.duvida__e{padding:12px 16px;font-size:15px;line-height:1.5}
+.duvida__p span,.duvida__r span{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:#8D8377;margin-bottom:4px}
+.duvida__r{background:#FBEFE4;border-top:2px solid #F3D9C6} .duvida__r span{color:#B04A1C}
+.duvida__e{background:#F6F2EC;color:#6E6259;font-style:italic}
+.painel__entrada{max-width:520px}
+.painel__topo{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:18px}
+.painel__n{background:#FBEFE4;border-radius:14px;padding:10px 18px;text-align:center} .painel__n b{display:block;font-size:30px;color:#B04A1C;line-height:1.1} .painel__n span{font-size:13px;color:#5A5045}
+.painel__n--ok{background:#EAF2EC} .painel__n--ok b{color:#2F6B4F}
+.painel__f{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chip-f{font:inherit;font-size:14px;font-weight:700;border:2px solid #D9CFC2;background:#fff;border-radius:20px;padding:6px 14px;cursor:pointer}
+.chip-f.ativo{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.painel__f select{font:inherit;font-size:14px;border:2px solid #D9CFC2;border-radius:20px;padding:6px 12px;background:#fff}
+.painel__h{margin-left:auto;display:flex;gap:12px;align-items:center;font-size:13px;color:#8D8377}
+.pd{background:#fff;border:2px solid #EFE7DC;border-left:8px solid #E5662C;border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.pd--ok{border-left-color:#5E7D52}
+.pd__cab{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;font-size:13px;color:#8D8377;margin-bottom:8px} .pd__cab b{font-size:16px;color:var(--tinta)}
+.pd__p{font-size:16px;line-height:1.5;margin-bottom:12px}
+.pd__r{background:#F3F7F2;border-radius:10px;padding:10px 14px;font-size:15px;line-height:1.5;margin-bottom:10px} .pd__r span{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:#2F6B4F;margin-bottom:4px}
+.pd textarea{display:block;width:100%;font:inherit;font-size:15px;border:2px solid #D9CFC2;border-radius:10px;padding:10px 12px;box-sizing:border-box}
+.pd__acoes{display:flex;gap:10px;align-items:center;margin-top:10px} .pd__ok{font-size:14px;color:#5A5045}
+.pd__vazio{color:#8D8377;font-style:italic}
+@media print{.duvidas{display:none!important}}
+.painel__f select{width:auto;display:inline-block}
+.curva{margin:16px 0 0;background:#fff;border:1.5px solid var(--linha);border-radius:12px;padding:14px}
+.curva__svg{display:block;width:100%;height:110px}
+.curva__cols{display:grid;grid-template-columns:17fr 16.5fr 16.5fr 16.5fr 33.5fr;gap:0;margin-top:8px}
+.curva__col{border-top:4px solid var(--c);padding:8px 5px 0;min-width:0}
+.curva__col b{display:block;font-size:13px;line-height:1.2}
+.curva__col span{display:block;font-size:12px;color:var(--fraco);margin-bottom:6px}
+.curva__col i{display:block;font-style:normal;font-size:13px;line-height:1.25;background:#FFF6B6;border-radius:6px;padding:5px 7px;margin-top:5px;overflow-wrap:anywhere}
+@media (max-width:700px){.curva__cols{grid-template-columns:1fr 1fr}}
+
+.nav a[data-instrutor]{display:inline-flex;align-items:center}
+.selo-n{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;padding:0 7px;margin-left:8px;border-radius:999px;background:var(--lar);color:#fff;font-size:12.5px;font-weight:700;line-height:1;box-shadow:0 0 0 2px #1B1512}
+.selo-n[hidden]{display:none}
+.nav a:hover .selo-n,.nav a.ativo .selo-n{background:#fff;color:var(--lar);box-shadow:none}
+.nav a.nav-selo{display:inline-flex;align-items:center}
+.abas{display:flex;flex-wrap:wrap;gap:6px;border-bottom:2px solid var(--linha);margin:0 0 26px}
+.aba{font:inherit;font-size:17px;font-weight:700;color:var(--corpo);background:none;border:0;border-bottom:4px solid transparent;margin-bottom:-2px;padding:12px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;border-radius:10px 10px 0 0}
+.aba:hover{color:var(--tinta);background:#FBF7F1}
+.aba[aria-selected="true"]{color:var(--tinta);border-bottom-color:var(--lar)}
+.aba[aria-selected="true"] svg{stroke:var(--lar)}
+.aba:focus-visible{outline:3px solid rgba(229,102,44,.35)}
+.aba .selo-n{margin-left:0;box-shadow:none}
+.aba__nota{font-size:15px;color:var(--corpo);margin:-4px 0 14px}
+[data-painel-aba="nova"] .duvidas__lista{display:none}
+.duvida--nova{border-color:#F0B48F;box-shadow:0 0 0 3px rgba(229,102,44,.12)}
+.selo-nova{display:inline-block;margin-left:10px;padding:3px 9px;border-radius:999px;background:var(--lar);color:#fff;font-style:normal;font-size:11px;letter-spacing:.14em;line-height:1.2;vertical-align:1px}
+.pd__leitura{font-size:13.5px;font-weight:700;letter-spacing:.02em;color:#8D8377;margin:0 0 10px}
+.pd__leitura--ok{color:#2F6B4F}
+@media (max-width:560px){.abas{flex-wrap:nowrap;gap:0}.aba{flex:0 1 auto;white-space:nowrap;font-size:15px;padding:11px 10px;gap:6px}.aba svg{display:none}}

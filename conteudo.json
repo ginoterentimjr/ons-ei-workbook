@@ -1,0 +1,666 @@
+{
+ "caminho": [
+  [
+   1,
+   "Encontro de abertura",
+   "15/10 · on-line",
+   "#4A3F37",
+   "A pesquisa de propósito e o fio da imersão",
+   "Abertura"
+  ],
+  [
+   2,
+   "Imersão da EI",
+   "22 e 23/10 · Rio de Janeiro",
+   "#7A4E6D",
+   "Propósito, valor, comportamentos, talentos e diagnóstico",
+   "Imersão"
+  ],
+  [
+   3,
+   "Encontro extra",
+   "30/11 · on-line",
+   "#B04A1C",
+   "A missão e a visão 2028 da EI",
+   "Encontro extra"
+  ]
+ ],
+ "encontros": [
+  {
+   "n": 3,
+   "tom": "#B04A1C",
+   "data": "30 de novembro de 2026",
+   "miro": "",
+   "titulo": "Missão e <em>visão 2028</em>",
+   "lede": "O resgate das construções da imersão, a distinção entre propósito e missão, a decisão sobre revisitar a missão (sim ou não, e basta um sim) e a visão 2028 da EI.",
+   "capaz": [
+    "Decidir se a missão atual da EI será revisitada: basta um sim.",
+    "Ajustar a missão, se a decisão pedir, preservando o que ela já diz bem.",
+    "Formular a visão 2028 da EI e sustentá-la por consentimento."
+   ],
+   "blocos": [
+    {
+     "id": "b0",
+     "num": "",
+     "nome": "Abertura e resgate",
+     "tom": "#4A3F37",
+     "titulo": "O que a EI <em>já construiu</em>",
+     "pergunta": "Antes de decidir sobre a missão, o que a EI já construiu?",
+     "constroi": "As construções da imersão, à vista",
+     "capaz": [
+      "Recuperar as construções da imersão e o que cada uma deixou.",
+      "Relacionar as construções ao propósito da EI.",
+      "Situar a missão e a visão como a sexta construção."
+     ],
+     "itens": [
+      {
+       "t": "atividade",
+       "id": "a0",
+       "titulo": "Uma palavra no chat",
+       "tempo": "2 min",
+       "area": null,
+       "perg": "“Desde a imersão, o que já está diferente na EI?”",
+       "passos": [
+        "Escreva uma palavra no chat, sem enviar. <i>1 min</i>",
+        "Ao sinal, todos enviam juntos. <i>1 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Cada um, no chat da turma."
+        ],
+        [
+         "Entrega",
+         "Uma palavra."
+        ],
+        [
+         "Tempo",
+         "2 min"
+        ]
+       ],
+       "exemplo": "<p>De uma equipe qualquer: “pauta”.</p>",
+       "campos": [
+        {
+         "k": "e3.a0.palavra",
+         "rotulo": "A Minha Palavra",
+         "tipo": "texto",
+         "ph": "Uma palavra"
+        }
+       ]
+      },
+      {
+       "t": "conceito",
+       "titulo": "As seis construções",
+       "html": "<div class=\"cards3\"><div><b>Propósito</b><p>“Por que a EI existe?”</p></div><div><b>Valor e papéis</b><p>“A quem serve, com que valor e por meio de quem?”</p></div><div><b>Comportamentos</b><p>“Que time é preciso ser?”</p></div><div><b>Talentos</b><p>“Que forças sustentam esse time?”</p></div><div><b>Cinco disfunções</b><p>“O que pode comprometê-lo?”</p></div><div><b>Missão e visão</b><p>“O que a EI faz e onde chega em 2028?”</p></div></div><p>Cinco construções nasceram na imersão, em 22 e 23 de outubro. A sexta, a missão e a visão 2028, é a deste encontro.</p>",
+       "fonte": "Relatoria da imersão da EI, versão 1"
+      }
+     ]
+    },
+    {
+     "id": "b1",
+     "num": "01",
+     "nome": "Propósito e missão",
+     "tom": "#7A4E6D",
+     "titulo": "Propósito, missão <em>e visão</em>",
+     "pergunta": "Se o propósito diz por que a EI existe, o que resta para a missão dizer?",
+     "constroi": "A distinção entre propósito, missão e visão",
+     "capaz": [
+      "Distinguir propósito, missão e visão, com base nas referências.",
+      "Identificar, numa frase, as pistas de cada termo.",
+      "Classificar frases de uma área fictícia entre os três termos."
+     ],
+     "itens": [
+      {
+       "t": "conceito",
+       "titulo": "Três termos que costumam se misturar",
+       "html": "<div class=\"cards3\"><div><b>Propósito · Permanente</b><p>Por que a área existe e a serviço de quê. <i>Exemplo, apenas ilustrativo:</i> Fazer cada investimento chegar a quem mais precisa de água tratada.</p></div><div><b>Missão · Revista quando a área muda</b><p>O que a área faz, para quem e como. <i>Exemplo, apenas ilustrativo:</i> Planejamos, priorizamos e acompanhamos os investimentos, com as diretorias e os municípios, com rigor técnico e transparência.</p></div><div><b>Visão · Datada e reconhecível</b><p>Onde a área estará numa data definida. <i>Exemplo, apenas ilustrativo:</i> Em 2028, a companhia reconhece o Planejamento como a área que antecipa onde investir.</p></div></div><p>Exemplos de uma companhia fictícia de saneamento, área de Planejamento.</p>",
+       "fonte": "Collins e Porras, 1996; Drucker, 1973"
+      },
+      {
+       "t": "conceito",
+       "titulo": "O que dizem as referências",
+       "html": "<div class=\"cards3\"><div><b>Collins e Porras · 1996</b><p><i>Building your company’s vision, Harvard Business Review.</i> Propósito é a razão de ser da organização: permanente, como uma estrela-guia, perseguida e nunca alcançada. A visão é um futuro desejado, com meta e prazo.</p></div><div><b>Drucker · 1973; 2008</b><p><i>Management: tasks, responsibilities, practices; The five most important questions.</i> A missão responde: qual é o nosso negócio, quem é o cliente, o que ele valoriza. Curta e focada, a ponto de caber numa camiseta.</p></div><div><b>Sinek · 2009</b><p><i>Start with why.</i> Por quê (a crença), como (o diferencial) e o quê (o que se faz): propósito no centro, missão em volta.</p></div><div><b>Kaplan e Norton · 2008</b><p><i>Mastering the management system, Harvard Business Review.</i> Chamam de missão a razão de existir, em uma ou duas frases; a visão olha de 3 a 10 anos à frente.</p></div></div><p><b>Os termos se sobrepõem na literatura.</b> O combinado da EI: propósito diz por quê; missão diz o quê, para quem e como; visão diz onde e quando.</p>",
+       "fonte": "Collins e Porras, 1996; Drucker, 1973 e 2008; Sinek, 2009; Kaplan e Norton, 2008"
+      },
+      {
+       "t": "atividade",
+       "id": "a1",
+       "titulo": "Propósito, missão ou visão?",
+       "tempo": "4 min",
+       "area": null,
+       "perg": "“Cada frase é propósito, missão ou visão?”",
+       "passos": [
+        "Leia as cinco frases de uma operadora fictícia de transporte metropolitano, área de Planejamento. <i>1 min</i>",
+        "Para cada frase, escolha propósito, missão ou visão; no chat, escreva as cinco letras (P, M ou V), sem enviar. <i>2 min</i>",
+        "Ao sinal, todos enviam juntos; depois, confira aqui as suas respostas. <i>1 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Cada um, no chat da turma."
+        ],
+        [
+         "Entrega",
+         "Cinco letras, na ordem das frases."
+        ],
+        [
+         "Tempo",
+         "4 min"
+        ]
+       ],
+       "exemplo": "<p>“Ligar as pessoas às oportunidades da cidade.” Propósito: diz por que a área existe, não tem prazo e não diz o que ela faz.</p>",
+       "campos": [
+        {
+         "k": "e3.a1.cl",
+         "rotulo": "As Cinco Frases",
+         "tipo": "associar",
+         "pares": [
+          [
+           "Fazer cada viagem chegar a quem depende dela.",
+           "Propósito"
+          ],
+          [
+           "Em 2028, a operadora reconhece o Planejamento como a área que antecipa a demanda da rede.",
+           "Visão"
+          ],
+          [
+           "Planejamos a rede e acompanhamos a operação, para as diretorias e as prefeituras, com dados que qualquer gestor entende.",
+           "Missão"
+          ],
+          [
+           "Até 2028, toda expansão da rede nasce de um estudo do Planejamento.",
+           "Visão"
+          ],
+          [
+           "Propomos às diretorias onde investir e medimos o resultado de cada linha, com rigor técnico e transparência.",
+           "Missão"
+          ]
+         ],
+         "opcoes": [
+          "Propósito",
+          "Missão",
+          "Visão"
+         ]
+        }
+       ],
+       "pontos": [
+        "Propósito: razão de ser, sem prazo.",
+        "Missão: verbo de ação, para quem e como.",
+        "Visão: uma data e um lugar a chegar."
+       ]
+      }
+     ]
+    },
+    {
+     "id": "b2",
+     "num": "02",
+     "nome": "Decisão por consentimento",
+     "tom": "#2F6B6F",
+     "titulo": "A necessidade de <em>revisitar a missão</em>",
+     "pergunta": "Depois de construirmos o propósito, ainda percebemos a necessidade de revisitar a nossa missão?",
+     "constroi": "A decisão: sim ou não; basta um sim",
+     "capaz": [
+      "Analisar a missão atual ao lado do propósito, com cinco lentes.",
+      "Diferenciar consenso de consentimento.",
+      "Decidir se a missão será revisitada: basta um sim."
+     ],
+     "itens": [
+      {
+       "t": "conceito",
+       "titulo": "O propósito ao lado da missão atual",
+       "html": "<div class=\"cards3\"><div><b>Propósito da EI</b><p>“Habilitar o ONS do futuro, conectando pessoas e impulsionando resultados.” Construído na imersão, com tech e touch.</p></div><div><b>Missão atual</b><p>“Somos habilitadores do ONS do futuro através da construção da estratégia, garantindo a sua execução com confiança e neutralidade.” Redigida pela equipe quando a área ainda era a TE.</p></div><div><b>Cinco lentes para a leitura</b><p>O que a EI faz · Para quem · Como · Cada frente se reconhece · Trinta segundos.</p></div></div>",
+       "fonte": "Painel 03 e peça 28 da imersão"
+      },
+      {
+       "t": "conceito",
+       "titulo": "Consenso, consentimento e como decidimos hoje",
+       "html": "<div class=\"cards3\"><div><b>Consenso</b><p>Todos concordam com a proposta. Uma pessoa contrária basta para tudo voltar à negociação.</p></div><div><b>Consentimento</b><p>Ninguém tem objeção que o impeça de sustentar a proposta: boa o suficiente por ora e segura o suficiente para tentar.</p></div><div><b>Como decidimos hoje</b><p>A decisão sobre a missão: sim ou não, e basta um sim. A aprovação das frases: consinto ou objeção; uma objeção pede ajuste de redação.</p></div></div>",
+       "fonte": "Bockelbrink, Priest e David, Sociocracy 3.0; Rau e Koch-Gonzalez, Many voices, one song, 2018"
+      },
+      {
+       "t": "regua",
+       "titulo": "A pergunta em pauta",
+       "html": "<p><b>Depois de construirmos o propósito, ainda percebemos a necessidade de revisitar a nossa missão?</b></p><ul><li><b>Não:</b> Seguimos direto para a visão 2028. O propósito e a missão ficam como estão.</li><li><b>Sim:</b> Trabalhamos a missão e, depois, a visão 2028.</li></ul><p><b>A regra deste encontro:</b> Basta um sim para revisitarmos a missão.</p>"
+      },
+      {
+       "t": "atividade",
+       "id": "a2",
+       "titulo": "A conversa nas salas",
+       "tempo": "15 min",
+       "area": "Área 1",
+       "pergs": [
+        "O ONS de 2028 pede uma EI diferente da que a missão descreve?",
+        "A missão atual ainda diz o que a EI faz, para quem e como?",
+        "Você a explicaria em trinta segundos a quem você atende?"
+       ],
+       "passos": [
+        "Cada um lê, em silêncio, o propósito e a missão atual, no frame da sala. <i>2 min</i>",
+        "Conversem sobre as três perguntas, nesta ordem. <i>10 min</i>",
+        "O relator registra, em post-its, o que preservar, o que incomoda e a posição. <i>3 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Três salas mistas, EID e EIT"
+        ],
+        [
+         "Material",
+         "Miro · Área 1"
+        ],
+        [
+         "Papéis",
+         "Guardião do tempo, relator e porta-voz, definidos no primeiro minuto."
+        ],
+        [
+         "Entrega",
+         "O que preservar, o que incomoda e a posição"
+        ],
+        [
+         "Tempo",
+         "15 min"
+        ]
+       ],
+       "exemplo": "<p>“Preservaríamos os dados; incomoda a frase falar só de planejamento.”</p>",
+       "campos": [
+        {
+         "k": "e3.a2.pres",
+         "rotulo": "O Que Eu Preservaria",
+         "linhas": 2
+        },
+        {
+         "k": "e3.a2.inc",
+         "rotulo": "O Que Me Incomoda",
+         "linhas": 2
+        },
+        {
+         "k": "e3.a2.pos",
+         "rotulo": "Como Chego à Plenária",
+         "linhas": 2
+        }
+       ]
+      },
+      {
+       "t": "atividade",
+       "id": "a3",
+       "titulo": "O voto individual",
+       "tempo": "2 min",
+       "area": null,
+       "perg": "“Depois de construirmos o propósito, ainda percebemos a necessidade de revisitar a nossa missão?”",
+       "passos": [
+        "Na enquete, cada um responde sim ou não, em silêncio. <i>1 min</i>",
+        "Quem respondeu sim escreve, em uma frase, o que precisa mudar. <i>1 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Cada um, individualmente"
+        ],
+        [
+         "Material",
+         "Enquete anônima no Zoom"
+        ],
+        [
+         "Entrega",
+         "Um voto por pessoa"
+        ],
+        [
+         "Tempo",
+         "2 min"
+        ]
+       ],
+       "exemplo": "<p>“Sim: a frase não fala de dados e IA.” A frase vai no chat ou no privado de Gino.</p>",
+       "campos": [],
+       "aviso": "O voto é anônimo, na enquete do Zoom: nada neste workbook registra o seu voto."
+      },
+      {
+       "t": "conceito",
+       "titulo": "O resultado e o caminho",
+       "html": "<div class=\"cards3\"><div><b>Ao menos um sim</b><p>Revisitamos a missão: a missão atual é a base, com o que preservar, o que rever e a nova redação. Depois, a visão 2028.</p></div><div><b>Nenhum sim</b><p>Seguimos direto para a visão. O propósito e a missão ficam como estão, e a visão ganha o horizonte por frente antes da declaração.</p></div></div>"
+      }
+     ]
+    },
+    {
+     "id": "b3",
+     "num": "03",
+     "nome": "Missão da EI",
+     "tom": "#B5781E",
+     "titulo": "A missão, <em>a partir da atual</em>",
+     "pergunta": "O que a missão atual já diz bem, e o que ela ainda não diz?",
+     "constroi": "A missão da EI, por consentimento (caminho A)",
+     "capaz": [
+      "Separar o que preservar do que rever na missão atual.",
+      "Redigir a missão da EI e passá-la pelo teste da missão.",
+      "Aprovar a missão da EI por consentimento."
+     ],
+     "aviso": "Só no caminho A: com ao menos um sim no voto do bloco 2.",
+     "itens": [
+      {
+       "t": "atividade",
+       "id": "a4",
+       "titulo": "A nova redação nas salas",
+       "tempo": "20 min",
+       "area": "Área 2",
+       "perg": "“O que a EI faz, para quem e como?”",
+       "passos": [
+        "Mapa de calor em post-its: verde para preservar, amarelo para rever. <i>4 min</i>",
+        "Redijam uma frase num post-it: o que a EI faz, para quem e como. <i>12 min</i>",
+        "Passem a frase pelo teste da missão; o relator registra o que ficou e o que mudou. <i>4 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "As mesmas salas"
+        ],
+        [
+         "Material",
+         "Miro · Área 2"
+        ],
+        [
+         "Entrega",
+         "Uma frase de missão, testada"
+        ],
+        [
+         "Tempo",
+         "20 min"
+        ]
+       ],
+       "exemplo": "<p>“Antecipamos falhas da frota para que a operação decida a tempo, com dados que qualquer gestor entende.”</p>",
+       "campos": [
+        {
+         "k": "e3.a4.verde",
+         "rotulo": "O Que Preservar (Verde)",
+         "linhas": 2
+        },
+        {
+         "k": "e3.a4.amarelo",
+         "rotulo": "O Que Rever ou Acrescentar (Amarelo)",
+         "linhas": 2
+        },
+        {
+         "k": "e3.a4.frase",
+         "rotulo": "A Frase da Minha Sala",
+         "linhas": 3
+        }
+       ],
+       "pontos": [
+        "<b>O que a EI faz:</b> Verbo de ação, compreensível fora da área.",
+        "<b>Para quem:</b> Quem a EI serve.",
+        "<b>Como:</b> O diferencial que a equipe decidiu preservar.",
+        "<b>Cada frente se reconhece:</b> Sem lista de frentes.",
+        "<b>Trinta segundos:</b> Qualquer pessoa da EI explica a frase."
+       ]
+      },
+      {
+       "t": "atividade",
+       "id": "a5",
+       "titulo": "Da redação das salas à missão da EI",
+       "tempo": "8 min",
+       "area": "Área 2",
+       "passos": [
+        "<b>Três versões.</b> Cada porta-voz lê a versão da sala: o que preservou e o que mudou. <i>3 min</i>",
+        "<b>Versão-base.</b> Na enquete, cada um escolhe a versão que melhor passa no teste da missão. <i>1 min</i>",
+        "<b>Enxertos.</b> Até uma expressão de cada outra versão, proposta pelo grupo autor. <i>2 min</i>",
+        "<b>Consentimento.</b> Enquete: consinto ou objeção; uma objeção pede ajuste de redação. <i>2 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Plenária, com os porta-vozes."
+        ],
+        [
+         "Material",
+         "Miro · Área 2, frame da plenária."
+        ],
+        [
+         "Entrega",
+         "A missão da EI, por consentimento."
+        ],
+        [
+         "Tempo",
+         "8 min"
+        ]
+       ],
+       "exemplo": "<p>À versão-base, o grupo autor de outra versão propõe acrescentar “com dados e IA”.</p>",
+       "campos": [
+        {
+         "k": "e3.a5.missao",
+         "rotulo": "A Missão da EI, Como Aprovada",
+         "linhas": 3
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "b4",
+     "num": "04",
+     "nome": "Visão 2028",
+     "tom": "#B04A1C",
+     "titulo": "A visão <em>2028</em>",
+     "pergunta": "Onde a EI quer estar quando o próximo ciclo orçamentário do ONS começar?",
+     "constroi": "A visão 2028 da EI, por consentimento",
+     "capaz": [
+      "Relacionar o que o ONS vai precisar em 2028 ao que a EI oferece hoje.",
+      "Formular a visão 2028 da EI, em até duas frases.",
+      "Aprovar a visão 2028 por consentimento."
+     ],
+     "itens": [
+      {
+       "t": "conceito",
+       "titulo": "Por que escrever a visão",
+       "html": "<div class=\"cards3\"><div><b>183 empresas</b><p>Os atributos e o conteúdo da visão influenciaram o crescimento das empresas, diretamente e por meio da comunicação.</p></div><div><b>Quatro atributos</b><p>Breve, clara, desafiadora e voltada para o futuro.</p></div><div><b>Dita e repetida</b><p>A visão só funciona quando a liderança a comunica: escrever é o começo.</p></div></div>",
+       "fonte": "Baum, Locke e Kirkpatrick, Journal of Applied Psychology, 83(1), 1998"
+      },
+      {
+       "t": "atividade",
+       "id": "a6",
+       "titulo": "O horizonte por frente",
+       "tempo": "20 min",
+       "area": "Área 3",
+       "aviso_at": "Só no caminho B: com nenhum sim no voto do bloco 2.",
+       "pergs": [
+        "Sala 1: Portfólio de projetos · Acordos operacionais · Desenho organizacional",
+        "Sala 2: Inovação, P&D e cooperação técnica · Governança de dados e IA",
+        "Sala 3: Estratégia, radar e benchmarking · Metas e PPR"
+       ],
+       "passos": [
+        "Para cada frente da sala: contínua ou com horizonte de maturidade?. <i>8 min</i>",
+        "Para cada frente: o que o ONS precisará em 2028 que a EI ainda não oferece?. <i>10 min</i>",
+        "O relator confere os post-its no frame da sala. <i>2 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "As mesmas salas"
+        ],
+        [
+         "Material",
+         "Miro · Área 3"
+        ],
+        [
+         "Entrega",
+         "As frentes da sala, com as duas respostas"
+        ],
+        [
+         "Tempo",
+         "20 min"
+        ]
+       ],
+       "exemplo": "<p>“Pesquisa de mobilidade: horizonte de maturidade. Em 2028, pesquisa própria e contínua, com painel aberto às prefeituras.”</p>",
+       "campos": [
+        {
+         "k": "e3.a6.hz",
+         "rotulo": "As Frentes da Minha Sala",
+         "tipo": "tabela",
+         "n": 3,
+         "colunas": [
+          {
+           "t": "Frente",
+           "ph": "Nome da frente"
+          },
+          {
+           "t": "Natureza",
+           "opcoes": [
+            "Contínua",
+            "Horizonte de maturidade"
+           ]
+          },
+          {
+           "t": "O que o ONS precisará em 2028 que a EI ainda não oferece",
+           "ph": ""
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "atividade",
+       "id": "a7",
+       "titulo": "A declaração nas salas",
+       "tempo": "20 min",
+       "area": "Área 4",
+       "perg": "“Em 2028, o ONS reconhece a EI como…”",
+       "passos": [
+        "Cada um escreve, num post-it, o que o ONS vai precisar em 2028. <i>5 min</i>",
+        "Redijam a declaração, em até duas frases, a partir da frase de partida. <i>12 min</i>",
+        "Confiram os atributos: breve, clara, desafiadora, voltada para o futuro. <i>3 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "As mesmas salas"
+        ],
+        [
+         "Material",
+         "Miro · Área 4"
+        ],
+        [
+         "Entrega",
+         "A declaração da sala"
+        ],
+        [
+         "Tempo",
+         "20 min"
+        ]
+       ],
+       "exemplo": "<p>“Em 2028, a operadora reconhece o Planejamento como a área que antecipa onde investir.”</p>",
+       "campos": [
+        {
+         "k": "e3.a7.prec",
+         "rotulo": "O Que o ONS Vai Precisar em 2028",
+         "linhas": 2
+        },
+        {
+         "k": "e3.a7.decl",
+         "rotulo": "A Declaração da Minha Sala",
+         "linhas": 3
+        }
+       ],
+       "pontos": [
+        "<b>Breve:</b> Cabe em até duas frases.",
+        "<b>Clara:</b> Qualquer pessoa da EI a explica com as próprias palavras.",
+        "<b>Desafiadora:</b> Pede da EI algo que ela ainda não oferece.",
+        "<b>Voltada para o futuro:</b> Tem 2028 e um lugar a chegar.",
+        "<b>Reconhecível de fora:</b> Quem reconhece é o ONS, e não só a EI."
+       ]
+      },
+      {
+       "t": "atividade",
+       "id": "a8",
+       "titulo": "Da redação das salas à visão da EI",
+       "tempo": "8 min",
+       "area": "Área 4",
+       "passos": [
+        "<b>Três versões.</b> Cada porta-voz lê a declaração da sala. <i>3 min</i>",
+        "<b>Versão-base.</b> Na enquete, cada um escolhe a versão que melhor atende ao teste da visão. <i>1 min</i>",
+        "<b>Enxertos.</b> Até uma expressão de cada outra versão, proposta pelo grupo autor. <i>2 min</i>",
+        "<b>Consentimento.</b> Enquete: consinto ou objeção; uma objeção pede ajuste de redação. <i>2 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Plenária, com os porta-vozes."
+        ],
+        [
+         "Material",
+         "Miro · Área 4, frame da plenária."
+        ],
+        [
+         "Entrega",
+         "A visão 2028 da EI, por consentimento."
+        ],
+        [
+         "Tempo",
+         "8 min"
+        ]
+       ],
+       "exemplo": "<p>“Em 2028, a operadora reconhece o Planejamento como a área que antecipa onde investir, com dados de mobilidade.” O trecho final foi o enxerto da sala 2.</p>",
+       "campos": [
+        {
+         "k": "e3.a8.visao",
+         "rotulo": "A Visão 2028 da EI, Como Aprovada",
+         "linhas": 3
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "b5",
+     "num": "",
+     "nome": "Fechamento",
+     "tom": "#4A3F37",
+     "titulo": "O caminho <em>completo</em>",
+     "pergunta": "O que a visão 2028 pede da EI, e de cada um, a partir de amanhã?",
+     "constroi": "Os próximos passos",
+     "itens": [
+      {
+       "t": "conceito",
+       "titulo": "Três próximos passos",
+       "html": "<div class=\"cards3\"><div><b>Relatoria completa</b><p>A versão 2 da relatoria reúne a missão e a visão às construções da imersão e segue para o grupo.</p></div><div><b>Missão e visão comunicadas</b><p>A visão ganha força quando a liderança a repete. Exemplo, apenas ilustrativo: a visão abre a apresentação da EI no próximo ciclo de planejamento.</p></div><div><b>Compromissos em curso</b><p>Pauta das reuniões, feedback e quadro visual seguem como combinado na imersão.</p></div></div>"
+      },
+      {
+       "t": "atividade",
+       "id": "a9",
+       "titulo": "A pergunta final",
+       "tempo": "2 min",
+       "area": null,
+       "perg": "“O que a visão 2028 pede da EI, e de você, a partir de amanhã?”",
+       "passos": [
+        "Escreva uma frase no chat, sem enviar. <i>1 min</i>",
+        "Ao sinal, todos enviam juntos. <i>1 min</i>",
+        "Registre aqui a mesma frase."
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Cada um, no chat da turma."
+        ],
+        [
+         "Entrega",
+         "Uma frase."
+        ],
+        [
+         "Tempo",
+         "2 min"
+        ]
+       ],
+       "campos": [
+        {
+         "k": "e3.a9.frase",
+         "rotulo": "O Que a Visão 2028 Pede de Mim a Partir de Amanhã",
+         "linhas": 2
+        },
+        {
+         "k": "e3.a9.muda",
+         "rotulo": "O Que Muda no Meu Trabalho",
+         "linhas": 3
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
