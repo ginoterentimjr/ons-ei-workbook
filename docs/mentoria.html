@@ -320,9 +320,21 @@ input[type=email],input[type=password]{width:100%;font:inherit;font-size:18px;co
   font-weight:700;font-size:14px;letter-spacing:.4px}
 .caminho-aviso--neutro{background:#F1ECE4;color:#5A5045}
 ol.pergs{margin:4px 0 12px;padding-left:22px}ol.pergs li{font-weight:700;margin:4px 0;line-height:1.4}
+.campo--det{border:1.5px solid #E2D9CD;border-radius:12px;padding:8px 14px;margin:10px 0;background:#FBF8F3}
+.campo--det summary{cursor:pointer;font-weight:700;color:#B04A1C;padding:4px 0}
+.imagem{border:2px dashed #E7B59C;border-radius:14px;padding:12px 16px;background:#FDF6F1}
+.imagem__aj{display:block;margin:8px 0}.imagem__aj span{display:block;font-size:14px;color:#6E6259;margin-bottom:4px}
+.imagem__acoes{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 4px}
+.imagem__acoes .btn svg{vertical-align:-4px}.imagem__rest{font-size:14px;color:#6E6259}
+.imagem__msg{font-size:15px;color:#B04A1C;font-weight:700;min-height:1px;margin:4px 0}
+.imagem--gerando .imagem__msg::after{content:"";display:inline-block;width:14px;height:14px;margin-left:8px;border:2px solid #B04A1C;
+  border-right-color:transparent;border-radius:50%;animation:gira .8s linear infinite;vertical-align:-2px}
+@keyframes gira{to{transform:rotate(360deg)}}
+.imagem__fig{margin:10px 0 4px}.imagem__fig img{width:100%;border-radius:12px;display:block;box-shadow:none}
+.imagem__fig figcaption{font-size:14px;color:#6E6259;margin:6px 0 8px;font-style:italic}
 </style></head>
 <body data-pg="mentoria">
-<header class="topo"><a class="marca" href="index.html"><img src="logo-gt-mark.png" alt=""><span><b>GINO TERENTIM</b><i>RETHINKING LEARNING</i></span></a><nav class="nav"><a href="index.html">Meu mapa</a><a href="e3.html">Encontro extra</a><a href="mentoria.html">Mentoria</a></nav><span class="conta" data-conta></span></header>
+<header class="topo"><a class="marca" href="index.html"><img src="logo-gt-mark.png" alt=""><span><b>GINO TERENTIM</b><i>RETHINKING LEARNING</i></span></a><nav class="nav"><a href="index.html">Meu mapa</a><a href="preparacao.html">Antes do encontro</a><a href="e3.html">Encontro extra</a><a href="mentoria.html">Mentoria</a></nav><span class="conta" data-conta></span></header>
 <main><section class="capa" style="--tom:#E5662C"><p class="capa__k">DEPOIS DO ENCONTRO</p><h1>Dúvidas para o <em>Gino Terentim</em></h1><p class="capa__l">Pergunte sobre o método e sobre as atividades do encontro. A dúvida chega ao Gino Terentim, e a resposta volta para a sua página do workbook e para o seu e-mail.</p></section><section class="bloco bloco--abre"><div class="abas" role="tablist" aria-label="Dúvidas para o Gino Terentim"><button type="button" class="aba" role="tab" id="aba-nova" aria-controls="painel-nova" aria-selected="true" data-aba="nova"><svg  class="lucide lucide-message-square-plus"  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z" />  <path d="M12 8v6" />  <path d="M9 11h6" /></svg>Nova dúvida</button><button type="button" class="aba" role="tab" id="aba-enviadas" aria-controls="painel-enviadas" aria-selected="false" tabindex="-1" data-aba="enviadas"><svg  class="lucide lucide-inbox"  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <polyline points="22 12 16 12 14 15 10 15 8 12 2 12" />  <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></svg>Dúvidas enviadas<span class="selo-n" data-naolidas-aba hidden></span></button></div><div class="aba__painel" role="tabpanel" id="painel-nova" aria-labelledby="aba-nova" data-painel-aba="nova"><h2>Como <em>perguntar</em></h2><ol class="passos"><li>Entre no workbook com o e-mail da inscrição e o seu código de quatro números.</li><li>Em cada atividade, use o botão <b>Perguntar ao mentor sobre esta atividade</b>. Para uma dúvida geral, use o botão abaixo.</li><li>A resposta aparece na aba <b>Dúvidas enviadas</b> e junto da atividade, e chega no seu e-mail. No menu, o item Mentoria mostra quantas respostas você ainda não leu.</li></ol><div class="duvidas" data-duvida="Dúvida geral"><p class="mentor"><button type="button" class="btn btn--mentor" data-duvida-abrir>Escrever uma dúvida geral</button></p><div class="duvidas__form" hidden><label class="duvidas__l">A sua dúvida para o Gino Terentim<textarea rows="4" placeholder="Escreva a dúvida com o contexto da atividade. Use o papel das pessoas, e não o nome."></textarea></label><div class="duvidas__acoes"><button type="button" class="btn" data-duvida-enviar>Enviar a dúvida</button><button type="button" class="btn btn--sec" data-duvida-cancelar>Cancelar</button></div></div><p class="duvidas__msg" aria-live="polite"></p><div class="duvidas__lista"></div></div><div class="cards3"><div><b>Reserva</b><p>As dúvidas ficam na planilha privada do encontro, aberta apenas ao Gino Terentim. Use o papel das pessoas, e não o nome, e mantenha fora do texto os dados reservados da sua organização.</p></div><div><b>Uma boa pergunta</b><p>Traz o contexto, o que você já tentou e o ponto exato da dúvida.</p></div><div><b>Prazo</b><p>As dúvidas ficam abertas até 14 de dezembro de 2026, duas semanas depois do encontro.</p></div></div><article class="regua"><h3>Exemplo de pergunta, apenas ilustrativo</h3><p>“No teste da missão, como saber se um verbo de ação se entende fora da área? Na minha sala, “habilitar” dividiu o grupo.”</p></article></div><div class="aba__painel" role="tabpanel" id="painel-enviadas" aria-labelledby="aba-enviadas" data-painel-aba="enviadas" hidden><h2>As suas <em>dúvidas</em></h2><p class="aba__nota">Cada resposta nova chega com o selo <b>Nova</b> e passa a constar como lida quando você abre esta aba.</p><div class="duvidas__todas" data-duvidas-todas></div></div></section></main>
 <footer class="rodape"><span>Workshop EI · ONS · Encontro extra de missão e visão · 30 de novembro de 2026</span><span>Rethinking Learning</span></footer>
 <script>window.CM4AI={api:"https://script.google.com/macros/s/AKfycbyO8p_XcFaJMXwX0FV_MK3a9ycy9ax4qn8s0cKMPbNWPLliEh7QlflWacWjEL1faAO4/exec",encontro:0};</script><script>(function(){
@@ -672,5 +684,52 @@ caixas.forEach(function(cx){
 });
 carregar();
 setInterval(function(){if(!document.hidden)carregar()},120000);
+})();
+
+// ---------- A história do futuro em imagem: o serviço envia o texto ao Claude, que descreve a cena, e ao modelo de imagem da OpenAI ----------
+(function(){
+"use strict";
+var C=window.CM4AI||{},API=C.api,S="onsei:sessao";
+function $(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+function sessao(){try{return JSON.parse(localStorage.getItem(S)||"null")}catch(e){return null}}
+function chamar(d){return fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d),redirect:"follow"}).then(function(r){return r.json()})}
+var MSG={curta:"Escreva um pouco mais antes de pedir a imagem: algumas linhas, com o lugar, as pessoas e o que acontece.",
+  limite:"As três versões desta imagem já foram usadas.",
+  sem_chave:"A geração de imagem ainda não está disponível. O seu texto está gravado.",
+  tempo:"O desenho demorou mais que o esperado. Tente de novo em instantes; o seu texto está gravado.",
+  imagem:"O serviço de imagem não respondeu. Tente de novo em instantes; o seu texto está gravado.",
+  sessao:"Entre com o seu e-mail, no Meu mapa, para pedir a imagem.",
+  rede:"Sem conexão com o serviço. Confira a internet e tente de novo."};
+$("[data-imagem]").forEach(function(bx){
+  var tipo=bx.getAttribute("data-imagem"),de=(bx.getAttribute("data-de")||"").split(" "),rot=(bx.getAttribute("data-rotulos")||"").split("|");
+  var bt=bx.querySelector("[data-img-pedir]"),aj=bx.querySelector("[data-img-ajuste]"),msg=bx.querySelector("[data-img-msg]"),
+      fig=bx.querySelector("[data-img-fig]"),im=fig.querySelector("img"),dl=bx.querySelector("[data-img-baixar]"),
+      cena=bx.querySelector("[data-img-cena]"),rest=bx.querySelector("[data-img-rest]");
+  function texto(){
+    return de.map(function(k,i){var el=document.querySelector('[data-k="'+k+'"]'),v=el?el.value.trim():"";return v?(rot[i]?rot[i]+": ":"")+v:""})
+      .filter(Boolean).join("\n\n");
+  }
+  function mostrar(r){
+    if(r.img){im.src=r.img;dl.href=r.img;fig.hidden=false;cena.textContent=r.cena?("A cena: "+r.cena):""}
+    if(typeof r.restantes==="number"){
+      rest.textContent=r.restantes>0?("Você ainda pode pedir "+r.restantes+(r.restantes>1?" versões.":" versão.")):"As três versões desta imagem já foram usadas.";
+      bt.disabled=r.restantes<=0;
+    }
+  }
+  var s=sessao();
+  if(!s||!API){bt.disabled=true;msg.textContent=MSG.sessao;return}
+  chamar({acao:"imagem_ver",email:s.email,token:s.token,tipo:tipo}).then(function(r){if(r&&r.ok)mostrar(r)}).catch(function(){});
+  bt.addEventListener("click",function(){
+    var t=texto();
+    if(t.length<120){msg.textContent=MSG.curta;return}
+    bt.disabled=true;bx.classList.add("imagem--gerando");msg.textContent="Desenhando a cena. Leva até um minuto.";
+    chamar({acao:"imagem",email:s.email,token:s.token,tipo:tipo,texto:t,ajuste:aj?aj.value:""}).then(function(r){
+      bx.classList.remove("imagem--gerando");
+      if(!r.ok){msg.textContent=MSG[r.erro]||MSG.imagem;bt.disabled=(r.erro==="limite"||r.erro==="sessao");return}
+      msg.textContent="Pronto. A imagem fica gravada na sua página; o botão abaixo dela baixa o arquivo.";
+      mostrar(r);if(aj)aj.value="";
+    }).catch(function(){bx.classList.remove("imagem--gerando");bt.disabled=false;msg.textContent=MSG.rede});
+  });
+});
 })();
 </script></body></html>

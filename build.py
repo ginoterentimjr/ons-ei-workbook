@@ -7,11 +7,11 @@ import sys, os, base64, html, json, shutil
 
 RAIZ0 = os.path.dirname(os.path.abspath(__file__))
 _c = json.load(open(os.path.join(RAIZ0, "conteudo.json"), encoding="utf-8"))
-ENCONTROS, CAMINHO = _c["encontros"], _c["caminho"]
+ENCONTROS, CAMINHO, PREP = _c["encontros"], _c["caminho"], _c.get("preparacao")
 _n = os.path.join(RAIZ0, "professor_notas.json")
 if os.path.exists(_n):
     _notas = json.load(open(_n, encoding="utf-8"))
-    for _e in ENCONTROS:
+    for _e in ENCONTROS + ([PREP] if PREP else []):
         for _b in _e["blocos"]:
             for _i in _b["itens"]:
                 _i.update(_notas.get(_i.get("id"), {}))
@@ -21,7 +21,7 @@ REPO = "https://github.com/ginoterentimjr/ons-ei-workbook"
 TITULO = "Encontro extra EI"
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 CSS = open(os.path.join(RAIZ, "src", "estilo.css"), encoding="utf-8").read()
-JS = "\n".join(open(os.path.join(RAIZ, "src", f), encoding="utf-8").read() for f in ("app.js", "conta.js", "duvidas.js"))
+JS = "\n".join(open(os.path.join(RAIZ, "src", f), encoding="utf-8").read() for f in ("app.js", "conta.js", "duvidas.js", "imagem.js"))
 PAINEL_JS = open(os.path.join(RAIZ, "src", "painel.js"), encoding="utf-8").read()
 API = open(os.path.join(RAIZ, "api.txt"), encoding="utf-8").read().strip() if os.path.exists(os.path.join(RAIZ, "api.txt")) else ""
 ICON_DIR = os.path.join(RAIZ, "src", "icons")
@@ -41,7 +41,7 @@ def icone(nome, cor="#FFFFFF", tam=28, sw=1.8):
     return t.replace('stroke="currentColor"', f'stroke="{cor}"').replace('stroke-width="2"', f'stroke-width="{sw}"').replace("\n", "")
 
 IC_BLOCO = {"Abertura e resgate": "door-open", "Propósito e missão": "compass", "Decisão por consentimento": "split",
-            "Missão da EI": "feather", "Visão 2028": "sunrise", "Fechamento": "handshake"}
+            "Missão da EI": "feather", "Visão 2028": "sunrise", "Fechamento": "handshake", "Antes do encontro": "sunrise"}
 IC_ENC = {1: "door-open", 2: "users", 3: "sunrise"}
 FOTO_ENC = {3: "e3.jpg"}
 e = html.escape
@@ -49,7 +49,7 @@ e = html.escape
 
 def campo(c):
     """c = dict(k, rotulo, tipo, dica, ...) -> html do campo."""
-    k, tipo = c["k"], c.get("tipo", "area")
+    k, tipo = c.get("k", ""), c.get("tipo", "area")
     rot = f'<label for="{k}"><b>{e(c["rotulo"])}</b></label>' if c.get("rotulo") else ""
     dica = f'<p class="dica">{e(c["dica"])}</p>' if c.get("dica") else ""
     if tipo == "area":
@@ -81,6 +81,20 @@ def campo(c):
             + "".join(f"<option>{e(o)}</option>" for o in [""] + c["opcoes"]) + "</select></li>"
             for i, (s, g) in enumerate(c["pares"]))
         corpo = f'<ol class="associar">{linhas}</ol><button type="button" class="btn btn--sec" data-conferir>Conferir as respostas</button>'
+    elif tipo == "detalhes":  # campos agrupados, recolhíveis
+        return (f'<details class="campo campo--det"><summary>{e(c["rotulo"])}</summary>' + "".join(campo(x) for x in c["campos"])
+                + "</details>")
+    elif tipo == "imagem":  # a história em imagem: o serviço chama o Claude e o modelo de imagem
+        if PROF:
+            return (f'<div class="campo">{rot}<p class="dica">Na página do participante, o botão “{e(c["botao"])}” envia o texto '
+                    f'ao serviço, que devolve a imagem da cena (até três versões).</p></div>')
+        return (f'<div class="campo imagem" data-imagem="{e(c["img"])}" data-de="{e(" ".join(c["de"]))}" data-rotulos="{e("|".join(c["rot"]))}">'
+                f'{rot}<p class="dica">{e(c["aviso"])}</p>'
+                f'<label class="imagem__aj"><span>Ajuste, se quiser (opcional)</span><input type="text" data-img-ajuste maxlength="300" placeholder="Por exemplo: à noite, na sala de controle, com mais pessoas"></label>'
+                f'<p class="imagem__acoes"><button type="button" class="btn" data-img-pedir>{icone("image", "#FFFFFF", 20, 2)} {e(c["botao"])}</button>'
+                f'<span class="imagem__rest" data-img-rest></span></p><p class="imagem__msg" data-img-msg aria-live="polite"></p>'
+                f'<figure class="imagem__fig" data-img-fig hidden><img alt="A imagem gerada a partir do texto"><figcaption data-img-cena></figcaption>'
+                f'<a class="btn btn--sec" data-img-baixar download="historia-do-futuro.jpg" href="#">Baixar a imagem</a></figure></div>')
     elif tipo == "tabela":
         cab = "".join(f"<th>{e(h['t'])}</th>" for h in c["colunas"])
         lin = ""
@@ -184,10 +198,11 @@ def caminho_html(atual, grande=False):
     return o + "</div>"
 
 
-def pagina(titulo, corpo, pg, fontes_css, extra_js=""):
-    nav = "" if PROF else ('<nav class="nav"><a href="index.html">Meu mapa</a><a href="e3.html">Encontro extra</a>'
-                           '<a href="mentoria.html">Mentoria</a></nav><span class="conta" data-conta></span>')
-    n_enc = int(pg[1:]) if pg.startswith("e") and pg[1:].isdigit() else 0
+def pagina(titulo, corpo, pg, fontes_css, extra_js="", n_enc=None):
+    nav = "" if PROF else ('<nav class="nav"><a href="index.html">Meu mapa</a><a href="preparacao.html">Antes do encontro</a>'
+                           '<a href="e3.html">Encontro extra</a><a href="mentoria.html">Mentoria</a></nav><span class="conta" data-conta></span>')
+    if n_enc is None:
+        n_enc = int(pg[1:]) if pg.startswith("e") and pg[1:].isdigit() else 0
     cfg = "" if PROF else f'<script>window.CM4AI={{api:{json.dumps(API)},encontro:{n_enc}}};</script>'
     selo = '<span class="selo-prof">VERSÃO DO PROFESSOR</span>' if PROF else ""
     return f"""<!doctype html>
@@ -207,6 +222,18 @@ CSS_ONS = """
   font-weight:700;font-size:14px;letter-spacing:.4px}
 .caminho-aviso--neutro{background:#F1ECE4;color:#5A5045}
 ol.pergs{margin:4px 0 12px;padding-left:22px}ol.pergs li{font-weight:700;margin:4px 0;line-height:1.4}
+.campo--det{border:1.5px solid #E2D9CD;border-radius:12px;padding:8px 14px;margin:10px 0;background:#FBF8F3}
+.campo--det summary{cursor:pointer;font-weight:700;color:#B04A1C;padding:4px 0}
+.imagem{border:2px dashed #E7B59C;border-radius:14px;padding:12px 16px;background:#FDF6F1}
+.imagem__aj{display:block;margin:8px 0}.imagem__aj span{display:block;font-size:14px;color:#6E6259;margin-bottom:4px}
+.imagem__acoes{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:8px 0 4px}
+.imagem__acoes .btn svg{vertical-align:-4px}.imagem__rest{font-size:14px;color:#6E6259}
+.imagem__msg{font-size:15px;color:#B04A1C;font-weight:700;min-height:1px;margin:4px 0}
+.imagem--gerando .imagem__msg::after{content:"";display:inline-block;width:14px;height:14px;margin-left:8px;border:2px solid #B04A1C;
+  border-right-color:transparent;border-radius:50%;animation:gira .8s linear infinite;vertical-align:-2px}
+@keyframes gira{to{transform:rotate(360deg)}}
+.imagem__fig{margin:10px 0 4px}.imagem__fig img{width:100%;border-radius:12px;display:block;box-shadow:none}
+.imagem__fig figcaption{font-size:14px;color:#6E6259;margin:6px 0 8px;font-style:italic}
 """
 
 
@@ -242,6 +269,18 @@ def encontro_html(enc):
     return o
 
 
+def preparacao_html(p):
+    o = ('<section class="capa capa--foto" style="--tom:#B04A1C;--foto:url(' + img_url("e3.jpg") + ')"><p class="capa__k">ANTES DO ENCONTRO · ATÉ 29 DE NOVEMBRO DE 2026</p>'
+         '<h1>A história <em>do futuro</em></h1><p class="capa__l">Uma manhã de 2028 na EI, contada por você, no presente e com os detalhes que quiser. '
+         'A história é o ponto de partida da visão 2028 no encontro de 30 de novembro: na sala, cada um lê o trecho mais forte, e o grupo escreve a história comum.</p></section>')
+    o += '<section class="bloco bloco--abre">' + ("" if PROF else barra()) + "</section>"
+    for b in p["blocos"]:
+        o += bloco_html(b, p)
+    if not PROF:
+        o += '<section class="bloco">' + barra() + "</section>"
+    return o
+
+
 def fontes(inline):
     o = ""
     for peso, arq in ((400, "Poppins-Regular.ttf"), (500, "Poppins-Medium.ttf"), (700, "Poppins-Bold.ttf")):
@@ -259,10 +298,12 @@ if PROF:
     corpo = ('<section class="capa" style="--tom:#E5662C"><p class="capa__k">VERSÃO DO PROFESSOR · ENCONTRO EXTRA · 30/11/2026</p>'
              '<h1>Missão e <em>visão 2028</em></h1><p class="capa__l">O mesmo workbook da equipe da EI, com a condução, as respostas e as perguntas de fechamento de cada atividade. '
              'Arquivo único, para uso fora da internet. Não publicar.</p></section>')
+    if PREP:
+        corpo += preparacao_html(PREP)
     for enc in ENCONTROS:
         corpo += encontro_html(enc)
     os.makedirs(os.path.join(RAIZ, "professor"), exist_ok=True)
-    VER = sys.argv[2] if len(sys.argv) > 2 else "v2"
+    VER = sys.argv[2] if len(sys.argv) > 2 else "v3"
     open(os.path.join(RAIZ, "professor", f"Workshop_EI_ONS_Encontro-Extra_Workbook-Professor_{VER}.html"), "w", encoding="utf-8").write(
         pagina(f"{TITULO} · Workbook · Versão do professor", corpo, "prof", fontes(True)))
     print("professor ok")
@@ -281,6 +322,9 @@ else:
     for enc in ENCONTROS:
         open(os.path.join(D, f"e{enc['n']}.html"), "w", encoding="utf-8").write(
             pagina(f"{TITULO} · Workbook · 30 de novembro", encontro_html(enc), f"e{enc['n']}", F))
+    if PREP:
+        open(os.path.join(D, "preparacao.html"), "w", encoding="utf-8").write(
+            pagina(f"{TITULO} · Antes do encontro · A história do futuro", preparacao_html(PREP), "preparacao", F, n_enc=PREP["n"]))
     idx = ('<section class="capa capa--foto" style="--tom:#E5662C;--foto:url(img/capa.jpg)"><p class="capa__k">WORKSHOP EI · ONS · ENCONTRO EXTRA · 30 DE NOVEMBRO DE 2026</p>'
            '<h1>O seu mapa de <em>navegação</em></h1><p class="capa__l">A página de cada participante no encontro extra de missão e visão. Aqui ficam as instruções de cada atividade, '
            'com o mesmo texto dos slides e do quadro do Miro, e o registro das suas respostas.</p></section>')
@@ -301,6 +345,7 @@ else:
             '<div class="cards3 cards3--claro"><div><b>Como usar</b><p>Abra o encontro do dia e registre as suas respostas à medida que cada atividade acontece. Sem conexão, o registro fica neste navegador e segue para a sua página na alteração seguinte.</p></div>'
             '<div><b>O fio da imersão</b><p>O encontro extra completa a sexta construção da imersão de 22 e 23 de outubro: a missão e a visão 2028 da EI.</p></div>'
             '<div><b>Reserva dos seus dados</b><p>As respostas ficam na planilha privada do encontro, aberta apenas ao Gino Terentim, e na sua página, protegida pelo seu código. Use o papel das pessoas, e não o nome.</p></div></div>'
+            f'<a class="cartao cartao--mentor" href="preparacao.html" style="--tom:#B04A1C"><span class="disco" style="--tom:#E5662C">{icone("sunrise")}</span><span><span class="cartao__k">ANTES DO ENCONTRO · ATÉ 29 DE NOVEMBRO</span><b>A história do futuro</b><i>Uma manhã de 2028 na EI, contada por você; o workbook desenha a cena da sua história</i></span></a>'
             f'<a class="cartao cartao--mentor" href="mentoria.html" style="--tom:#2A211C"><span class="disco" style="--tom:#E5662C">{icone("messages-square")}</span><span><span class="cartao__k">DEPOIS DO ENCONTRO</span><b>Dúvidas para o Gino Terentim</b><i>Pergunte sobre o método e as atividades; a resposta volta para a sua página e para o seu e-mail</i></span></a></section>')
     open(os.path.join(D, "index.html"), "w", encoding="utf-8").write(pagina(f"{TITULO} · Workbook digital", idx, "index", F))
     m = ('<section class="capa" style="--tom:#E5662C"><p class="capa__k">DEPOIS DO ENCONTRO</p><h1>Dúvidas para o <em>Gino Terentim</em></h1>'

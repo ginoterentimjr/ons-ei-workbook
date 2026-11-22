@@ -32,11 +32,11 @@
    "data": "30 de novembro de 2026",
    "miro": "https://miro.com/app/board/uXjVELRQge8=/",
    "titulo": "Missão e <em>visão 2028</em>",
-   "lede": "O resgate das construções da imersão, a distinção entre propósito e missão, a decisão sobre revisitar a missão (sim ou não, e basta um sim) e a visão 2028 da EI.",
+   "lede": "O resgate das construções da imersão, a distinção entre propósito e missão, a decisão sobre revisitar a missão (sim ou não, e basta um sim) e a visão 2028 da EI, a partir da história do futuro.",
    "capaz": [
     "Decidir se a missão atual da EI será revisitada: basta um sim.",
     "Ajustar a missão, se a decisão pedir, preservando o que ela já diz bem.",
-    "Formular a visão 2028 da EI e sustentá-la por consentimento."
+    "Formular a visão 2028 da EI a partir da história do futuro e sustentá-la por consentimento."
    ],
    "blocos": [
     {
@@ -315,7 +315,7 @@
       {
        "t": "conceito",
        "titulo": "O resultado e o caminho",
-       "html": "<div class=\"cards3\"><div><b>Ao menos um sim</b><p>Revisitamos a missão: a missão atual é a base, com o que preservar, o que rever e a nova redação. Depois, a visão 2028.</p></div><div><b>Nenhum sim</b><p>Seguimos direto para a visão. O propósito e a missão ficam como estão, e a visão ganha o horizonte por frente antes da declaração.</p></div></div>"
+       "html": "<div class=\"cards3\"><div><b>Ao menos um sim</b><p>Revisitamos a missão: a missão atual é a base, com o que preservar, o que rever e a nova redação. Depois, a visão 2028.</p></div><div><b>Nenhum sim</b><p>Seguimos direto para a visão. O propósito e a missão ficam como estão, e as salas contam a história comum na plenária antes da declaração.</p></div></div>"
       }
      ]
     },
@@ -438,11 +438,11 @@
      "tom": "#B04A1C",
      "titulo": "A visão <em>2028</em>",
      "pergunta": "Onde a EI quer estar quando o próximo ciclo orçamentário do ONS começar?",
-     "constroi": "A visão 2028 da EI, por consentimento",
+     "constroi": "A história comum e a visão 2028 da EI, por consentimento",
      "capaz": [
-      "Relacionar o que o ONS vai precisar em 2028 ao que a EI oferece hoje.",
-      "Formular a visão 2028 da EI, em até duas frases.",
-      "Aprovar a visão 2028 por consentimento."
+      "Descrever, numa história comum, a EI de 2028.",
+      "Identificar o que a EI precisa criar para chegar lá.",
+      "Formular a visão 2028, em até duas frases, e aprová-la por consentimento."
      ],
      "itens": [
       {
@@ -452,78 +452,136 @@
        "fonte": "Baum, Locke e Kirkpatrick, Journal of Applied Psychology, 83(1), 1998"
       },
       {
+       "t": "conceito",
+       "titulo": "Do estado atual ao estado futuro",
+       "html": "<div class=\"cards3\"><div><b>Hoje · o estado atual</b><p>Como a EI trabalha e é vista em 2026.</p></div><div><b>A ponte · o que criar</b><p>O que é diferente entre hoje e a história comum, e o que a EI precisa construir para chegar lá.</p></div><div><b>2028 · o estado futuro</b><p>A história comum: uma imagem viva da EI, contada com detalhes. A declaração da visão é essa imagem condensada em até duas frases.</p></div></div>",
+       "fonte": "Beckhard e Harris, Organizational transitions, 1987; Collins e Porras, 1996"
+      },
+      {
        "t": "atividade",
        "id": "a6",
-       "titulo": "O horizonte por frente",
-       "tempo": "20 min",
-       "area": "Área 3",
-       "aviso_at": "Só no caminho B: com nenhum sim no voto do bloco 2.",
-       "pergs": [
-        "Sala 1: Portfólio de projetos · Acordos operacionais · Desenho organizacional",
-        "Sala 2: Inovação, P&D e cooperação técnica · Governança de dados e IA",
-        "Sala 3: Estratégia, radar e benchmarking · Metas e PPR"
-       ],
+       "titulo": "A história do futuro",
+       "tempo": "5 min",
+       "area": null,
+       "perg": "“É uma manhã de 2028 na EI. O que você vê?”",
        "passos": [
-        "Para cada frente da sala: contínua ou com horizonte de maturidade?. <i>8 min</i>",
-        "Para cada frente: o que o ONS precisará em 2028 que a EI ainda não oferece?. <i>10 min</i>",
-        "O relator confere os post-its no frame da sala. <i>2 min</i>"
+        "Releia a sua história, ou escreva a sua agora. <i>4 min</i>",
+        "Marque o trecho mais forte, para ler na sala. <i>1 min</i>"
        ],
        "meta": [
         [
          "Com quem",
-         "As mesmas salas"
+         "Cada um"
         ],
         [
          "Material",
-         "Miro · Área 3"
+         "Workbook · bloco da visão"
         ],
         [
          "Entrega",
-         "As frentes da sala, com as duas respostas"
+         "O trecho mais forte"
         ],
         [
          "Tempo",
-         "20 min"
+         "5 min"
         ]
        ],
-       "exemplo": "<p>“Pesquisa de mobilidade: horizonte de maturidade. Em 2028, pesquisa própria e contínua, com painel aberto às prefeituras.”</p>",
+       "exemplo": "<p>“É uma terça de março de 2028, oito da manhã. No centro de operações da operadora, a analista de planejamento abre o painel de demanda da semana, e a secretária de mobilidade da prefeitura acompanha a mesma tela, de longe. A diretoria pergunta onde nasce a próxima linha; a resposta vem do estudo de dez anos feito pela própria área. Ninguém monta planilha na véspera: os dados chegam sozinhos. No fim da reunião, o diretor de operações comenta: ‘Antes, descobríamos a demanda pela lotação; agora, chegamos antes dela.’”</p><p>De uma operadora fictícia de transporte, área de Planejamento.</p>",
        "campos": [
         {
-         "k": "e3.a6.hz",
-         "rotulo": "As Frentes da Minha Sala",
-         "tipo": "tabela",
-         "n": 3,
-         "colunas": [
+         "k": "e3.hf.livre",
+         "rotulo": "A Minha História do Futuro",
+         "ph": "Conte a história inteira, no presente, com todos os detalhes que quiser",
+         "linhas": 12
+        },
+        {
+         "tipo": "detalhes",
+         "rotulo": "O norte, item a item (o que você escreveu antes do encontro)",
+         "campos": [
           {
-           "t": "Frente",
-           "ph": "Nome da frente"
+           "k": "e3.hf.cena",
+           "rotulo": "Onde e Quando",
+           "ph": "É uma manhã de [mês] de 2028, em…",
+           "linhas": 2
           },
           {
-           "t": "Natureza",
-           "opcoes": [
-            "Contínua",
-            "Horizonte de maturidade"
-           ]
+           "k": "e3.hf.chega",
+           "rotulo": "O Que Chega à EI",
+           "ph": "Um pedido, um problema, uma oportunidade do ONS ou do setor",
+           "linhas": 2
           },
           {
-           "t": "O que o ONS precisará em 2028 que a EI ainda não oferece",
-           "ph": ""
+           "k": "e3.hf.resp",
+           "rotulo": "Como a EI Responde",
+           "ph": "Quem participa, com que dados, em quanto tempo, com que resultado",
+           "linhas": 3
+          },
+          {
+           "k": "e3.hf.fora",
+           "rotulo": "O Que Dizem de Fora",
+           "ph": "Uma frase de alguém do ONS ou do setor sobre a EI",
+           "linhas": 2
+          },
+          {
+           "k": "e3.hf.deixou",
+           "rotulo": "O Que Já Não Existe",
+           "ph": "O que deixou de ser necessário",
+           "linhas": 2
+          },
+          {
+           "k": "e3.hf.orgulho",
+           "rotulo": "O Momento de Orgulho",
+           "ph": "Um resultado concreto, com número, se houver",
+           "linhas": 2
           }
          ]
+        },
+        {
+         "k": "e3.hf.trecho",
+         "rotulo": "O Trecho Mais Forte, para Ler na Sala",
+         "linhas": 3,
+         "ph": "O trecho que você lê para a sua sala, em até um minuto"
+        },
+        {
+         "k": "e3.hf.img",
+         "tipo": "imagem",
+         "img": "historia",
+         "de": [
+          "e3.hf.cena",
+          "e3.hf.chega",
+          "e3.hf.resp",
+          "e3.hf.fora",
+          "e3.hf.deixou",
+          "e3.hf.orgulho",
+          "e3.hf.livre"
+         ],
+         "rot": [
+          "Onde e Quando",
+          "O Que Chega à EI",
+          "Como a EI Responde",
+          "O Que Dizem de Fora",
+          "O Que Já Não Existe",
+          "O Momento de Orgulho",
+          "A história"
+         ],
+         "rotulo": "A Imagem da Minha História",
+         "botao": "Ver a minha história em imagem",
+         "aviso": "Ao pedir a imagem, o texto da sua história é enviado ao Claude, da Anthropic, que descreve a cena, e a um modelo de imagem da OpenAI, que a desenha. Use o papel das pessoas, e não o nome."
         }
-       ]
+       ],
+       "aviso": "Quem escreveu antes do encontro encontra aqui a própria história; quem ainda não escreveu escreve agora, em poucas linhas."
       },
       {
        "t": "atividade",
        "id": "a7",
-       "titulo": "A declaração nas salas",
-       "tempo": "20 min",
-       "area": "Área 4",
+       "titulo": "A história comum e a declaração nas salas",
+       "tempo": "26 min",
+       "area": "Áreas 3 e 4",
        "perg": "“Em 2028, o ONS reconhece a EI como…”",
        "passos": [
-        "Cada um escreve, num post-it, o que o ONS vai precisar em 2028. <i>5 min</i>",
-        "Redijam a declaração, em até duas frases, a partir da frase de partida. <i>12 min</i>",
-        "Confiram os atributos: breve, clara, desafiadora, voltada para o futuro. <i>3 min</i>"
+        "Leiam o trecho mais forte de cada história e escrevam a história comum. <i>12 min</i>",
+        "Hoje e 2028: o que é diferente e o que a EI precisa criar. <i>4 min</i>",
+        "Redijam a declaração, em até duas frases, e confiram os atributos. <i>10 min</i>"
        ],
        "meta": [
         [
@@ -532,23 +590,43 @@
         ],
         [
          "Material",
-         "Miro · Área 4"
+         "Miro · Áreas 3 e 4"
         ],
         [
          "Entrega",
-         "A declaração da sala"
+         "A história comum e a declaração"
         ],
         [
          "Tempo",
-         "20 min"
+         "26 min"
         ]
        ],
        "exemplo": "<p>“Em 2028, a operadora reconhece o Planejamento como a área que antecipa onde investir.”</p>",
        "campos": [
         {
-         "k": "e3.a7.prec",
-         "rotulo": "O Que o ONS Vai Precisar em 2028",
-         "linhas": 2
+         "k": "e3.a7.comum",
+         "rotulo": "A História Comum da Minha Sala",
+         "linhas": 6,
+         "ph": "A história que a sala quer construir, no presente"
+        },
+        {
+         "k": "e3.a7.img",
+         "tipo": "imagem",
+         "img": "sala",
+         "de": [
+          "e3.a7.comum"
+         ],
+         "rot": [
+          ""
+         ],
+         "rotulo": "A Imagem da História Comum (para o relator)",
+         "botao": "Ver a história comum em imagem",
+         "aviso": "Para o relator: gere a imagem e cole no frame da sala, na Área 3 do Miro. Ao pedir a imagem, o texto da sua história é enviado ao Claude, da Anthropic, que descreve a cena, e a um modelo de imagem da OpenAI, que a desenha. Use o papel das pessoas, e não o nome."
+        },
+        {
+         "k": "e3.a7.criar",
+         "rotulo": "O Que a EI Precisa Criar para Chegar Lá",
+         "linhas": 3
         },
         {
          "k": "e3.a7.decl",
@@ -566,12 +644,50 @@
       },
       {
        "t": "atividade",
+       "id": "a6b",
+       "titulo": "As histórias comuns",
+       "tempo": "6 min",
+       "area": "Área 3",
+       "aviso_at": "Só no caminho B: com nenhum sim no voto do bloco 2.",
+       "passos": [
+        "Sala 1: a história comum, com a imagem na tela. <i>2 min</i>",
+        "Sala 2: a história comum, com a imagem na tela. <i>2 min</i>",
+        "Sala 3: a história comum, com a imagem na tela; o que se repete. <i>2 min</i>"
+       ],
+       "meta": [
+        [
+         "Com quem",
+         "Plenária, com os porta-vozes."
+        ],
+        [
+         "Material",
+         "Miro · Área 3, frames das salas."
+        ],
+        [
+         "Entrega",
+         "O que se repete entre as salas."
+        ],
+        [
+         "Tempo",
+         "6 min"
+        ]
+       ],
+       "campos": [
+        {
+         "k": "e3.a6b.repete",
+         "rotulo": "O Que Se Repete Entre as Salas",
+         "linhas": 2
+        }
+       ]
+      },
+      {
+       "t": "atividade",
        "id": "a8",
        "titulo": "Da redação das salas à visão da EI",
-       "tempo": "8 min",
+       "tempo": "9 min",
        "area": "Área 4",
        "passos": [
-        "<b>Três versões.</b> Cada porta-voz lê a declaração da sala. <i>3 min</i>",
+        "<b>Três versões.</b> Cada porta-voz lê a declaração e o que a EI precisa criar. <i>4 min</i>",
         "<b>Versão-base.</b> Na enquete, cada um escolhe a versão que melhor atende ao teste da visão. <i>1 min</i>",
         "<b>Enxertos.</b> Até uma expressão de cada outra versão, proposta pelo grupo autor. <i>2 min</i>",
         "<b>Consentimento.</b> Enquete: consinto ou objeção; uma objeção pede ajuste de redação. <i>2 min</i>"
@@ -591,7 +707,7 @@
         ],
         [
          "Tempo",
-         "8 min"
+         "9 min"
         ]
        ],
        "exemplo": "<p>“Em 2028, a operadora reconhece o Planejamento como a área que antecipa onde investir, com dados de mobilidade.” O trecho final foi o enxerto da sala 2.</p>",
@@ -662,5 +778,149 @@
     }
    ]
   }
- ]
+ ],
+ "preparacao": {
+  "n": 3,
+  "blocos": [
+   {
+    "id": "hf",
+    "num": "",
+    "nome": "Antes do encontro",
+    "tom": "#B04A1C",
+    "titulo": "A história <em>do futuro</em>",
+    "pergunta": "É uma manhã de 2028 na EI. O que você vê?",
+    "constroi": "A sua história do futuro, para o encontro de 30/11",
+    "capaz": [
+     "Descrever a EI de 2028 como quem já está lá, com detalhes concretos.",
+     "Identificar, na própria história, o que a EI ainda não tem hoje.",
+     "Escolher o trecho mais forte, para ler na sala no encontro."
+    ],
+    "itens": [
+     {
+      "t": "conceito",
+      "titulo": "Como escrever",
+      "html": "<div class=\"cards3\"><div><b>No presente</b><p>Escreva como quem já está em 2028: “a equipe abre o painel”, e não “a equipe vai abrir”.</p></div><div><b>Com detalhes</b><p>Lugar, hora, pessoas pelo papel, conversas, números, objetos. Quanto mais concreta a cena, mais viva a imagem.</p></div><div><b>Algo novo</b><p>Pelo menos uma coisa que hoje ainda não existe na EI ou no ONS: é ela que torna a visão desafiadora.</p></div></div><p><b>O propósito da EI, para reler antes de escrever:</b> “Habilitar o ONS do futuro, conectando pessoas e impulsionando resultados.”</p>",
+      "fonte": "Collins e Porras, Building your company’s vision, Harvard Business Review, 1996: a descrição vívida do futuro"
+     },
+     {
+      "t": "atividade",
+      "id": "hf",
+      "titulo": "A história do futuro",
+      "tempo": "20 a 30 min",
+      "area": null,
+      "perg": "“É uma manhã de 2028 na EI. O que você vê?”",
+      "passos": [
+       "Releia o propósito da EI, logo acima. <i>2 min</i>",
+       "Escreva a sua história no presente, como quem já está em 2028. O norte, item a item, serve de guia; o último campo é seu, para contar tudo, com os detalhes que quiser. <i>15 a 20 min</i>",
+       "Peça a imagem da sua história e, se quiser, ajuste até três versões. <i>3 min</i>",
+       "Marque o trecho mais forte: no encontro, você o lê para a sua sala, em até um minuto. <i>2 min</i>"
+      ],
+      "meta": [
+       [
+        "Com quem",
+        "Cada um, antes do encontro."
+       ],
+       [
+        "Prazo",
+        "Até 29 de novembro."
+       ],
+       [
+        "Entrega",
+        "A sua história, o trecho mais forte e, se quiser, a imagem."
+       ],
+       [
+        "Tempo",
+        "20 a 30 min"
+       ]
+      ],
+      "exemplo": "<p>“É uma terça de março de 2028, oito da manhã. No centro de operações da operadora, a analista de planejamento abre o painel de demanda da semana, e a secretária de mobilidade da prefeitura acompanha a mesma tela, de longe. A diretoria pergunta onde nasce a próxima linha; a resposta vem do estudo de dez anos feito pela própria área. Ninguém monta planilha na véspera: os dados chegam sozinhos. No fim da reunião, o diretor de operações comenta: ‘Antes, descobríamos a demanda pela lotação; agora, chegamos antes dela.’”</p><p>De uma operadora fictícia de transporte, área de Planejamento.</p>",
+      "campos": [
+       {
+        "k": "e3.hf.cena",
+        "rotulo": "Onde e Quando",
+        "ph": "É uma manhã de [mês] de 2028, em…",
+        "linhas": 2
+       },
+       {
+        "k": "e3.hf.chega",
+        "rotulo": "O Que Chega à EI",
+        "ph": "Um pedido, um problema, uma oportunidade do ONS ou do setor",
+        "linhas": 2
+       },
+       {
+        "k": "e3.hf.resp",
+        "rotulo": "Como a EI Responde",
+        "ph": "Quem participa, com que dados, em quanto tempo, com que resultado",
+        "linhas": 3
+       },
+       {
+        "k": "e3.hf.fora",
+        "rotulo": "O Que Dizem de Fora",
+        "ph": "Uma frase de alguém do ONS ou do setor sobre a EI",
+        "linhas": 2
+       },
+       {
+        "k": "e3.hf.deixou",
+        "rotulo": "O Que Já Não Existe",
+        "ph": "O que deixou de ser necessário",
+        "linhas": 2
+       },
+       {
+        "k": "e3.hf.orgulho",
+        "rotulo": "O Momento de Orgulho",
+        "ph": "Um resultado concreto, com número, se houver",
+        "linhas": 2
+       },
+       {
+        "k": "e3.hf.livre",
+        "rotulo": "A Minha História do Futuro",
+        "ph": "Conte a história inteira, no presente, com todos os detalhes que quiser",
+        "linhas": 12
+       },
+       {
+        "k": "e3.hf.img",
+        "tipo": "imagem",
+        "img": "historia",
+        "de": [
+         "e3.hf.cena",
+         "e3.hf.chega",
+         "e3.hf.resp",
+         "e3.hf.fora",
+         "e3.hf.deixou",
+         "e3.hf.orgulho",
+         "e3.hf.livre"
+        ],
+        "rot": [
+         "Onde e Quando",
+         "O Que Chega à EI",
+         "Como a EI Responde",
+         "O Que Dizem de Fora",
+         "O Que Já Não Existe",
+         "O Momento de Orgulho",
+         "A história"
+        ],
+        "rotulo": "A Imagem da Minha História",
+        "botao": "Ver a minha história em imagem",
+        "aviso": "Ao pedir a imagem, o texto da sua história é enviado ao Claude, da Anthropic, que descreve a cena, e a um modelo de imagem da OpenAI, que a desenha. Use o papel das pessoas, e não o nome."
+       },
+       {
+        "k": "e3.hf.trecho",
+        "rotulo": "O Trecho Mais Forte, para Ler na Sala",
+        "linhas": 3,
+        "ph": "O trecho que você lê para a sua sala, em até um minuto"
+       }
+      ],
+      "pontos": [
+       "No presente, como quem já está lá.",
+       "Pessoas pelo papel, nunca pelo nome.",
+       "Pelo menos um detalhe que hoje ainda não existe.",
+       "Um trecho forte, que caiba em um minuto de leitura."
+      ],
+      "aviso": "A história fica na planilha privada do encontro, aberta apenas ao Gino Terentim, e aparece de novo na sua página do encontro, no bloco da visão."
+     }
+    ]
+   }
+  ],
+  "miro": "https://miro.com/app/board/uXjVELRQge8=/"
+ }
 }
