@@ -151,13 +151,18 @@ def bloco_html(b, enc):
             if it.get("pergs"):
                 o += '<ol class="pergs">' + "".join(f"<li>{e(x)}</li>" for x in it["pergs"]) + "</ol>"
             o += f'<ol class="passos">{passos}</ol><div class="meta">{meta}</div>'
+            if it.get("nota_at"):
+                o += f'<p class="caminho-aviso caminho-aviso--neutro">{it["nota_at"]}</p>'
+            if it.get("pontos") and it.get("pontos_aberto"):
+                o += (f'<details class="pontos" open><summary>{e(it.get("pontos_titulo", "Os pontos que não podem faltar"))}'
+                      '</summary><ul>' + "".join(f"<li>{p}</li>" for p in it["pontos"]) + "</ul></details>")
             if it.get("exemplo"):
                 o += f'<div class="exemplo"><span>EXEMPLO, APENAS ILUSTRATIVO</span>{it["exemplo"]}</div>'
             if it["campos"]:
                 o += '<div class="registro"><span class="registro__t">O SEU REGISTRO</span>' + "".join(campo(c) for c in it["campos"]) + "</div>"
             if it.get("aviso"):
                 o += f'<p class="caminho-aviso caminho-aviso--neutro">{e(it["aviso"])}</p>'
-            if it.get("pontos"):
+            if it.get("pontos") and not it.get("pontos_aberto"):
                 o += '<details class="pontos"><summary>Os pontos que não podem faltar</summary><ul>' + "".join(f"<li>{p}</li>" for p in it["pontos"]) + "</ul></details>"
             if not PROF:
                 o += caixa_duvida(titq)

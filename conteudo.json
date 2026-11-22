@@ -148,6 +148,7 @@
          "4 min"
         ]
        ],
+       "nota_at": "Cinco letras no chat, na ordem das frases, sem enviar. Ao sinal, todos enviam.",
        "exemplo": "<p>“Ligar as pessoas às oportunidades da cidade.” Propósito: diz por que a área existe, não tem prazo e não diz o que ela faz.</p>",
        "campos": [
         {
@@ -308,7 +309,7 @@
          "2 min"
         ]
        ],
-       "exemplo": "<p>“Sim: a frase não fala de dados e IA.” A frase vai no chat ou no privado de Gino.</p>",
+       "exemplo": "<p>“Sim: a frase não fala de dados e IA.” A frase vai só no privado de Gino.</p>",
        "campos": [],
        "aviso": "O voto é anônimo, na enquete do Zoom: nada neste workbook registra o seu voto."
       },
@@ -388,19 +389,22 @@
         "<b>Como:</b> O diferencial que a equipe decidiu preservar.",
         "<b>Cada frente se reconhece:</b> Sem lista de frentes.",
         "<b>Trinta segundos:</b> Qualquer pessoa da EI explica a frase."
-       ]
+       ],
+       "pontos_titulo": "O teste da missão",
+       "pontos_aberto": true
       },
       {
        "t": "atividade",
        "id": "a5",
        "titulo": "Da redação das salas à missão da EI",
-       "tempo": "8 min",
+       "tempo": "10 min",
        "area": "Área 2",
        "passos": [
         "<b>Três versões.</b> Cada porta-voz lê a versão da sala: o que preservou e o que mudou. <i>3 min</i>",
         "<b>Versão-base.</b> Na enquete, cada um escolhe a versão que melhor passa no teste da missão. <i>1 min</i>",
         "<b>Enxertos.</b> Até uma expressão de cada outra versão, proposta pelo grupo autor. <i>2 min</i>",
-        "<b>Consentimento.</b> Enquete: consinto ou objeção; uma objeção pede ajuste de redação. <i>2 min</i>"
+        "<b>Consentimento.</b> Enquete: consinto ou objeção; uma objeção pede ajuste de redação. <i>2 min</i>",
+        "<b>Ajuste.</b> Se houver objeção, o ajuste de redação, ali mesmo. <i>2 min</i>"
        ],
        "meta": [
         [
@@ -417,9 +421,10 @@
         ],
         [
          "Tempo",
-         "8 min"
+         "10 min"
         ]
        ],
+       "nota_at": "Gino escreve a frase final na tela, com a versão-base e os enxertos.",
        "exemplo": "<p>À versão-base, o grupo autor de outra versão propõe acrescentar “com dados e IA”.</p>",
        "campos": [
         {
@@ -465,7 +470,7 @@
        "area": null,
        "perg": "“É uma manhã de 2028 na EI. O que você vê?”",
        "passos": [
-        "Releia a sua história, ou escreva a sua agora. <i>4 min</i>",
+        "Releia a sua história; quem não escreveu, três linhas, só a cena principal. <i>4 min</i>",
         "Marque o trecho mais forte, para ler na sala. <i>1 min</i>"
        ],
        "meta": [
@@ -569,7 +574,7 @@
          "aviso": "Ao pedir a imagem, o texto da sua história é enviado ao Claude, da Anthropic, que descreve a cena, e a um modelo de imagem da OpenAI, que a desenha. Use o papel das pessoas, e não o nome."
         }
        ],
-       "aviso": "Quem escreveu antes do encontro encontra aqui a própria história; quem ainda não escreveu escreve agora, em poucas linhas."
+       "aviso": "Quem escreveu antes do encontro encontra aqui a própria história; quem ainda não escreveu escreve agora três linhas, só a cena principal."
       },
       {
        "t": "atividade",
@@ -579,7 +584,7 @@
        "area": "Áreas 3 e 4",
        "perg": "“Em 2028, o ONS reconhece a EI como…”",
        "passos": [
-        "Leiam o trecho mais forte de cada história e escrevam a história comum. <i>12 min</i>",
+        "Cada um lê o trecho mais forte, em até um minuto, e cola a imagem no frame, se tiver; o grupo escreve a história comum. <i>12 min</i>",
         "Hoje e 2028: o que é diferente e o que a EI precisa criar. <i>4 min</i>",
         "Redijam a declaração, em até duas frases, e confiram os atributos. <i>10 min</i>"
        ],
@@ -602,6 +607,7 @@
         ]
        ],
        "exemplo": "<p>“Em 2028, a operadora reconhece o Planejamento como a área que antecipa onde investir.”</p>",
+       "nota_at": "<b>Passos 1 e 2 na Área 3; passo 3 na Área 4.</b> O relator pode gerar no workbook a imagem da história comum.",
        "campos": [
         {
          "k": "e3.a7.comum",
@@ -684,13 +690,14 @@
        "t": "atividade",
        "id": "a8",
        "titulo": "Da redação das salas à visão da EI",
-       "tempo": "9 min",
+       "tempo": "11 min",
        "area": "Área 4",
        "passos": [
         "<b>Três versões.</b> Cada porta-voz lê a declaração e o que a EI precisa criar. <i>4 min</i>",
         "<b>Versão-base.</b> Na enquete, cada um escolhe a versão que melhor atende ao teste da visão. <i>1 min</i>",
         "<b>Enxertos.</b> Até uma expressão de cada outra versão, proposta pelo grupo autor. <i>2 min</i>",
-        "<b>Consentimento.</b> Enquete: consinto ou objeção; uma objeção pede ajuste de redação. <i>2 min</i>"
+        "<b>Consentimento.</b> Enquete: consinto ou objeção; uma objeção pede ajuste de redação. <i>2 min</i>",
+        "<b>Ajuste.</b> Se houver objeção, o ajuste de redação, ali mesmo. <i>2 min</i>"
        ],
        "meta": [
         [
@@ -707,9 +714,10 @@
         ],
         [
          "Tempo",
-         "9 min"
+         "11 min"
         ]
        ],
+       "nota_at": "Gino escreve a frase final na tela, com a versão-base e os enxertos.",
        "exemplo": "<p>“Em 2028, a operadora reconhece o Planejamento como a área que antecipa onde investir, com dados de mobilidade.” O trecho final foi o enxerto da sala 2.</p>",
        "campos": [
         {
@@ -732,8 +740,8 @@
      "itens": [
       {
        "t": "conceito",
-       "titulo": "Três próximos passos",
-       "html": "<div class=\"cards3\"><div><b>Relatoria completa</b><p>A versão 2 da relatoria reúne a missão e a visão às construções da imersão e segue para o grupo.</p></div><div><b>Missão e visão comunicadas</b><p>A visão ganha força quando a liderança a repete. Exemplo, apenas ilustrativo: a visão abre a apresentação da EI no próximo ciclo de planejamento.</p></div><div><b>Compromissos em curso</b><p>Pauta das reuniões, feedback e quadro visual seguem como combinado na imersão.</p></div></div>"
+       "titulo": "Quatro próximos passos",
+       "html": "<div class=\"cards3\"><div><b>Relatoria completa</b><p>A versão 2 reúne missão, visão e histórias do futuro às seis construções da imersão.<br><br><i>Quem e quando:</i> Gino Terentim, até 07/12/2026.</p></div><div><b>O que a EI precisa criar</b><p>A ponte entre hoje e 2028, registrada pelas salas, como insumo do próximo ciclo de planejamento.<br><br><i>Quem e quando:</i> Responsável e prazo definidos ao vivo, com Rafael Zymler.</p></div><div><b>A visão comunicada</b><p>A visão ganha força quando a liderança a repete. Exemplo, apenas ilustrativo: a visão abre a apresentação da EI no próximo ciclo.<br><br><i>Quem e quando:</i> Responsável e prazo definidos ao vivo, com Rafael Zymler.</p></div><div><b>Compromissos em curso</b><p>Pauta das reuniões, feedback e quadro visual seguem como combinado na imersão.<br><br><i>Quem e quando:</i> Responsável e prazo definidos ao vivo, com Rafael Zymler.</p></div></div>"
       },
       {
        "t": "atividade",
