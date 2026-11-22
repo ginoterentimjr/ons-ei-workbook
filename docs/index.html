@@ -494,7 +494,9 @@ function mostrarMapa(){
     });
   }).catch(function(){});
 }
+var VOLTA=(/[?&]volta=((?:preparacao|e3|mentoria)\.html)/.exec(location.search)||[])[1];
 if(ent){
+  if(s&&VOLTA){location.replace(VOLTA);return}
   if(s){mostrarMapa()}else{ent.hidden=false}
   var f=ent.querySelector("form"),av=ent.querySelector("[data-aviso]");
   f&&f.addEventListener("submit",function(ev){
@@ -505,7 +507,7 @@ if(ent){
       var em=d.email.trim().toLowerCase(),ult="";try{ult=localStorage.getItem("onsei:ultimo")||""}catch(e){}
       if(ult&&ult!==em)limpar();
       s={email:em,token:r.token,nome:r.nome||d.nome,instr:!!r.instrutor};guardar(s);try{localStorage.setItem("onsei:ultimo",em)}catch(e){}
-      location.reload();
+      if(VOLTA){location.href=VOLTA}else{location.reload()}
     }).catch(function(){av.textContent=MSG.rede;av.className="entrada__aviso entrada__aviso--erro"});
   });
 }
@@ -520,7 +522,8 @@ function rotulo(el){
   return r.slice(0,190);
 }
 if(!s){
-  $("[data-aviso-conta]").forEach(function(el){el.hidden=false});
+  $("[data-aviso-conta]").forEach(function(el){el.hidden=false;var a=el.querySelector("a");
+    if(a)a.href="index.html?volta="+encodeURIComponent(location.pathname.split("/").pop()||"index.html")});
   return;
 }
 status("Abrindo as suas respostas…");
