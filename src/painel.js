@@ -54,7 +54,7 @@ function desenhar(){
   if(filtro==="aguardando")l.reverse();
   $("[data-p-lista]").innerHTML=l.length?l.map(function(d){
     var resp=d.situacao==="Respondida",ed=editando[d.id];
-    var cab='<div class="pd__cab"><b>'+esc(d.nome||d.email)+'</b><span>'+esc(d.email)+'</span><span>'+(d.encontro?"Encontro "+d.encontro+" · ":"")+esc(d.atividade||"Dúvida geral")+'</span><span>'+esc(d.recebida)+'</span></div>';
+    var cab='<div class="pd__cab"><b>'+esc(d.nome||d.email)+'</b><span>'+esc(d.email)+'</span><span>'+(d.encontro?({3:"Encontro extra"}[d.encontro]||"Encontro "+d.encontro)+" · ":"")+esc(d.atividade||"Dúvida geral")+'</span><span>'+esc(d.recebida)+'</span></div>';
     var corpo='<div class="pd__p">'+esc(d.pergunta)+'</div>';
     if(resp&&!ed){corpo+='<div class="pd__r"><span>A SUA RESPOSTA · '+esc(d.respondida)+'</span>'+esc(d.resposta)+'</div>'+
       (d.lida?'<p class="pd__leitura pd__leitura--ok">Lida pelo participante em '+esc(d.lida)+'</p>':'<p class="pd__leitura">Ainda não lida pelo participante</p>')+'<button type="button" class="btn btn--sec" data-p-editar="'+esc(d.id)+'">Editar a resposta</button>'}

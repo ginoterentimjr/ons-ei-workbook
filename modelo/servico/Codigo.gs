@@ -166,6 +166,9 @@ function mapa(ss, p) {
 /** Executar uma vez, pelo editor, para criar as abas e autorizar o acesso à planilha. */
 function preparar() {
   var ss = SpreadsheetApp.openById(PLANILHA_ID);
+  // A planilha nova pode nascer com outro fuso na API (America/Los_Angeles), mesmo com São Paulo na tela de configurações;
+  // com fusos diferentes, os horários gravados voltam deslocados. O fuso fica fixado aqui.
+  if (ss.getSpreadsheetTimeZone() !== 'America/Sao_Paulo') ss.setSpreadsheetTimeZone('America/Sao_Paulo');
   abaPart(ss);
   Object.keys(ENCONTROS).forEach(function (n) { abaEnc(ss, Number(n)); });
   var s1 = ss.getSheetByName('Página1') || ss.getSheetByName('Sheet1');

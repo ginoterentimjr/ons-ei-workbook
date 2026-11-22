@@ -325,7 +325,7 @@ ol.pergs{margin:4px 0 12px;padding-left:22px}ol.pergs li{font-weight:700;margin:
 <header class="topo"><a class="marca" href="index.html"><img src="logo-gt-mark.png" alt=""><span><b>GINO TERENTIM</b><i>RETHINKING LEARNING</i></span></a><nav class="nav"><a href="index.html">Meu mapa</a><a href="e3.html">Encontro extra</a><a href="mentoria.html">Mentoria</a></nav><span class="conta" data-conta></span></header>
 <main><section class="capa" style="--tom:#2A211C"><p class="capa__k">ÁREA DO PROFESSOR</p><h1>Painel de <em>dúvidas</em></h1><p class="capa__l">As dúvidas da equipe chegam aqui em tempo real. A resposta aparece no workbook do participante e vai para o e-mail dele.</p></section><section class="bloco bloco--abre painel"><div class="painel__entrada" data-p-entrada><label class="duvidas__l">Chave do painel<input type="password" autocomplete="current-password" data-p-chave></label><div class="duvidas__acoes"><button type="button" class="btn" data-p-entrar>Abrir o painel</button><button type="button" class="btn btn--sec" data-p-enviar-chave>Receber a chave no e-mail</button></div></div><p class="duvidas__msg" data-p-msg aria-live="polite"></p><div data-p-quadro hidden><div class="painel__topo"><div class="painel__n"><b data-p-ag>0</b><span>aguardando</span></div><div class="painel__n painel__n--ok"><b data-p-rp>0</b><span>respondidas</span></div><div class="painel__f"><button type="button" class="chip-f" data-p-filtro="aguardando">Aguardando</button><button type="button" class="chip-f" data-p-filtro="respondidas">Respondidas</button><button type="button" class="chip-f" data-p-filtro="todas">Todas</button><select data-p-enc><option value="0">Todos os encontros</option><option value="3">Encontro extra</option></select></div><div class="painel__h"><span data-p-hora></span><button type="button" class="btn btn--sec" data-p-sair>Sair</button></div></div><div data-p-lista></div></div></section></main>
 <footer class="rodape"><span>Workshop EI · ONS · Encontro extra de missão e visão · 30 de novembro de 2026</span><span>Rethinking Learning</span></footer>
-<script>window.CM4AI={api:"",encontro:0};</script><script>(function(){
+<script>window.CM4AI={api:"https://script.google.com/macros/s/AKfycbyO8p_XcFaJMXwX0FV_MK3a9ycy9ax4qn8s0cKMPbNWPLliEh7QlflWacWjEL1faAO4/exec",encontro:0};</script><script>(function(){
 "use strict";
 var P="onsei:",mem={};
 function ler(k){try{var v=localStorage.getItem(P+k);return v===null?(mem[k]||""):v}catch(e){return mem[k]||""}}
@@ -559,6 +559,7 @@ window.addEventListener("pagehide",function(){
 (function(){
 "use strict";
 var C=window.CM4AI||{},API=C.api,ENC=C.encontro||0;
+var NOME_ENC={3:"Encontro extra"};
 function $(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
 function sessao(){try{return JSON.parse(localStorage.getItem("onsei:sessao")||"null")}catch(e){return null}}
 function chamar(d){return fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d),redirect:"follow"}).then(function(r){return r.json()})}
@@ -629,7 +630,7 @@ function desenharTodas(){
     if(!lista.length){el.innerHTML='<p class="duvidas__msg">Você ainda não enviou dúvidas.</p>';return}
     var ord=lista.slice().reverse().sort(function(a,b){return (b.nova||vistas[b.id]?1:0)-(a.nova||vistas[a.id]?1:0)});
     el.innerHTML=ord.map(function(d){
-      var onde=(d.encontro?"ENCONTRO "+d.encontro+" · ":"")+esc(String(d.atividade||"").toUpperCase());
+      var onde=(d.encontro?(NOME_ENC[d.encontro]||"Encontro "+d.encontro).toUpperCase()+" · ":"")+esc(String(d.atividade||"").toUpperCase());
       return '<div class="duvida'+(d.nova||vistas[d.id]?" duvida--nova":"")+'"><div class="duvida__p"><span>'+onde+' · '+esc(d.recebida)+'</span>'+esc(d.pergunta)+'</div>'+resposta(d,false)+'</div>';
     }).join("");
   });
@@ -728,7 +729,7 @@ function desenhar(){
   if(filtro==="aguardando")l.reverse();
   $("[data-p-lista]").innerHTML=l.length?l.map(function(d){
     var resp=d.situacao==="Respondida",ed=editando[d.id];
-    var cab='<div class="pd__cab"><b>'+esc(d.nome||d.email)+'</b><span>'+esc(d.email)+'</span><span>'+(d.encontro?"Encontro "+d.encontro+" · ":"")+esc(d.atividade||"Dúvida geral")+'</span><span>'+esc(d.recebida)+'</span></div>';
+    var cab='<div class="pd__cab"><b>'+esc(d.nome||d.email)+'</b><span>'+esc(d.email)+'</span><span>'+(d.encontro?({3:"Encontro extra"}[d.encontro]||"Encontro "+d.encontro)+" · ":"")+esc(d.atividade||"Dúvida geral")+'</span><span>'+esc(d.recebida)+'</span></div>';
     var corpo='<div class="pd__p">'+esc(d.pergunta)+'</div>';
     if(resp&&!ed){corpo+='<div class="pd__r"><span>A SUA RESPOSTA · '+esc(d.respondida)+'</span>'+esc(d.resposta)+'</div>'+
       (d.lida?'<p class="pd__leitura pd__leitura--ok">Lida pelo participante em '+esc(d.lida)+'</p>':'<p class="pd__leitura">Ainda não lida pelo participante</p>')+'<button type="button" class="btn btn--sec" data-p-editar="'+esc(d.id)+'">Editar a resposta</button>'}

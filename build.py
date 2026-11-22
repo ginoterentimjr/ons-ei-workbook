@@ -212,7 +212,7 @@ ol.pergs{margin:4px 0 12px;padding-left:22px}ol.pergs li{font-weight:700;margin:
 
 def caixa_duvida(atividade, rotulo="Perguntar ao mentor sobre esta atividade"):
     return (f'<div class="duvidas" data-duvida="{e(atividade)}"><p class="mentor"><button type="button" class="btn btn--mentor" data-duvida-abrir>{rotulo}</button></p>'
-            '<div class="duvidas__form" hidden><label class="duvidas__l">A sua dúvida para o Gino Terentim<textarea rows="4" placeholder="Escreva a dúvida com o contexto da sua adoção. Use o papel das pessoas, e não o nome."></textarea></label>'
+            '<div class="duvidas__form" hidden><label class="duvidas__l">A sua dúvida para o Gino Terentim<textarea rows="4" placeholder="Escreva a dúvida com o contexto da atividade. Use o papel das pessoas, e não o nome."></textarea></label>'
             '<div class="duvidas__acoes"><button type="button" class="btn" data-duvida-enviar>Enviar a dúvida</button><button type="button" class="btn btn--sec" data-duvida-cancelar>Cancelar</button></div></div>'
             '<p class="duvidas__msg" aria-live="polite"></p><div class="duvidas__lista"></div></div>')
 

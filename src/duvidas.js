@@ -1,6 +1,7 @@
 (function(){
 "use strict";
 var C=window.CM4AI||{},API=C.api,ENC=C.encontro||0;
+var NOME_ENC={3:"Encontro extra"};
 function $(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
 function sessao(){try{return JSON.parse(localStorage.getItem("onsei:sessao")||"null")}catch(e){return null}}
 function chamar(d){return fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(d),redirect:"follow"}).then(function(r){return r.json()})}
@@ -71,7 +72,7 @@ function desenharTodas(){
     if(!lista.length){el.innerHTML='<p class="duvidas__msg">Você ainda não enviou dúvidas.</p>';return}
     var ord=lista.slice().reverse().sort(function(a,b){return (b.nova||vistas[b.id]?1:0)-(a.nova||vistas[a.id]?1:0)});
     el.innerHTML=ord.map(function(d){
-      var onde=(d.encontro?"ENCONTRO "+d.encontro+" · ":"")+esc(String(d.atividade||"").toUpperCase());
+      var onde=(d.encontro?(NOME_ENC[d.encontro]||"Encontro "+d.encontro).toUpperCase()+" · ":"")+esc(String(d.atividade||"").toUpperCase());
       return '<div class="duvida'+(d.nova||vistas[d.id]?" duvida--nova":"")+'"><div class="duvida__p"><span>'+onde+' · '+esc(d.recebida)+'</span>'+esc(d.pergunta)+'</div>'+resposta(d,false)+'</div>';
     }).join("");
   });
