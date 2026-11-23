@@ -21,7 +21,7 @@ REPO = "https://github.com/ginoterentimjr/ons-ei-workbook"
 TITULO = "Encontro extra EI"
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 CSS = open(os.path.join(RAIZ, "src", "estilo.css"), encoding="utf-8").read()
-JS = "\n".join(open(os.path.join(RAIZ, "src", f), encoding="utf-8").read() for f in ("app.js", "conta.js", "duvidas.js", "imagem.js"))
+JS = "\n".join(open(os.path.join(RAIZ, "src", f), encoding="utf-8").read() for f in ("app.js", "conta.js", "duvidas.js", "imagem.js", "voz.js"))
 PAINEL_JS = open(os.path.join(RAIZ, "src", "painel.js"), encoding="utf-8").read()
 API = open(os.path.join(RAIZ, "api.txt"), encoding="utf-8").read().strip() if os.path.exists(os.path.join(RAIZ, "api.txt")) else ""
 ICON_DIR = os.path.join(RAIZ, "src", "icons")
@@ -47,6 +47,22 @@ FOTO_ENC = {3: "e3.jpg"}
 e = html.escape
 
 
+def voz(k, v):
+    """Microfone (a fala vira texto) e o botão que organiza a história nos itens do norte."""
+    if PROF:
+        return ('<p class="dica">Na página do participante, este campo traz o microfone, que transforma a fala em texto, e o '
+                'botão “Organizar no norte”, que propõe os itens do norte com as palavras da pessoa, só nos campos vazios.</p>')
+    roteiro = "".join(f"<li><b>{e(r)}</b> · {e(ph)}</li>" for _, r, ph in v["norte"])
+    return (f'<div class="voz" data-voz="{k}" data-norte="{e(json.dumps(v["norte"], ensure_ascii=False))}">'
+            f'<p class="voz__acoes"><button type="button" class="btn" data-voz-gravar>{icone("mic", "#FFFFFF", 20, 2)} Contar falando</button>'
+            f'<button type="button" class="btn btn--sec" data-voz-organizar>{icone("list-checks", "#2A211C", 20, 2)} Organizar no norte</button>'
+            f'<span class="voz__tempo" data-voz-tempo></span></p>'
+            f'<div class="voz__roteiro" data-voz-roteiro hidden><p>Fale no presente, como quem já está em 2028. Um roteiro, se ajudar:</p>'
+            f'<ol>{roteiro}</ol></div>'
+            f'<p class="voz__msg" data-voz-msg aria-live="polite"></p>'
+            f'<p class="dica">{e(v["aviso"])}</p></div>')
+
+
 def campo(c):
     """c = dict(k, rotulo, tipo, dica, ...) -> html do campo."""
     k, tipo = c.get("k", ""), c.get("tipo", "area")
@@ -54,6 +70,8 @@ def campo(c):
     dica = f'<p class="dica">{e(c["dica"])}</p>' if c.get("dica") else ""
     if tipo == "area":
         corpo = f'<textarea id="{k}" data-k="{k}" rows="{c.get("linhas", 3)}" placeholder="{e(c.get("ph", ""))}"></textarea>'
+        if c.get("voz"):
+            corpo += voz(k, c["voz"])
     elif tipo == "texto":
         corpo = f'<input type="text" id="{k}" data-k="{k}" placeholder="{e(c.get("ph", ""))}">'
     elif tipo == "escolha":
@@ -239,6 +257,21 @@ ol.pergs{margin:4px 0 12px;padding-left:22px}ol.pergs li{font-weight:700;margin:
 @keyframes gira{to{transform:rotate(360deg)}}
 .imagem__fig{margin:10px 0 4px}.imagem__fig img{width:100%;border-radius:12px;display:block;box-shadow:none}
 .imagem__fig figcaption{font-size:14px;color:#6E6259;margin:6px 0 8px;font-style:italic}
+.voz{margin:8px 0 4px}
+.voz__acoes{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 0 4px}
+.voz__acoes .btn svg{vertical-align:-4px}.voz__acoes .btn[disabled]{opacity:.5;cursor:default}
+.voz__tempo{font-size:15px;font-weight:700;color:#B04A1C;font-variant-numeric:tabular-nums}
+.voz--gravando .voz__tempo::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:#C62828;
+  margin-right:8px;animation:pisca 1s ease-in-out infinite}
+@keyframes pisca{50%{opacity:.25}}
+.voz--gravando [data-voz-gravar]{background:#2A211C}
+.voz__roteiro{border:1.5px solid #E2D9CD;border-radius:12px;padding:8px 14px;margin:8px 0;background:#FBF8F3;font-size:15px}
+.voz__roteiro p{margin:2px 0 6px;color:#5A5045}.voz__roteiro ol{margin:0;padding-left:20px}.voz__roteiro li{margin:3px 0;color:#5A5045}
+.voz__roteiro li b{color:#2A211C}
+.voz__msg{font-size:15px;color:#B04A1C;font-weight:700;min-height:1px;margin:4px 0}
+.voz--ocupado .voz__msg::after{content:"";display:inline-block;width:14px;height:14px;margin-left:8px;border:2px solid #B04A1C;
+  border-right-color:transparent;border-radius:50%;animation:gira .8s linear infinite;vertical-align:-2px}
+textarea.sugerido{border-color:#E7B59C;background:#FDF6F1}
 """
 
 
