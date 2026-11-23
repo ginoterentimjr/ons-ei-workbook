@@ -310,7 +310,7 @@ if PROF:
     os.makedirs(os.path.join(RAIZ, "professor"), exist_ok=True)
     VER = sys.argv[2] if len(sys.argv) > 2 else "v3"
     open(os.path.join(RAIZ, "professor", f"Workshop_EI_ONS_Encontro-Extra_Workbook-Professor_{VER}.html"), "w", encoding="utf-8").write(
-        pagina(f"{TITULO} · Workbook · Versão do professor", corpo, "prof", fontes(True)))
+        pagina(f"{TITULO} · Workbook · Versão do professor · {VER}", corpo, "prof", fontes(True)))
     print("professor ok")
 else:
     MARCA = "logo-gt-mark.png"
