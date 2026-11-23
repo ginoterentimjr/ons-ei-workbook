@@ -783,12 +783,12 @@ $("[data-voz]").forEach(function(bx){
       rot=bx.querySelector("[data-voz-roteiro]"),tempo=bx.querySelector("[data-voz-tempo]"),rotuloG=btG.innerHTML;
   var s=sessao();
   if(!alvo)return;
-  if(!s||!API){btG.disabled=true;btO.disabled=true;msg.textContent=MSG.sessao;return}
+  if(!s||!API){btG.disabled=true;if(btO)btO.disabled=true;msg.textContent=MSG.sessao;return}
   var podeGravar=!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder);
   var rec=null,partes=[],t0=0,relogio=null;
   function ocupado(on){bx.classList.toggle("voz--ocupado",on)}
   function gravando(on){
-    bx.classList.toggle("voz--gravando",on);rot.hidden=!on;btO.disabled=on;
+    bx.classList.toggle("voz--gravando",on);rot.hidden=!on;if(btO)btO.disabled=on;
     btG.innerHTML=on?btG.innerHTML.replace(/<\/svg>[\s\S]*$/,"</svg> Concluir a gravação"):rotuloG;
     if(!on)tempo.textContent="";
   }
@@ -799,17 +799,17 @@ $("[data-voz]").forEach(function(bx){
   function enviarAudio(b){
     if(b.size<3000){msg.textContent=MSG.curto;return}
     if(b.size>9000000){msg.textContent=MSG.grande;return}
-    btG.disabled=true;btO.disabled=true;ocupado(true);msg.textContent="Transformando a sua fala em texto. Leva alguns segundos.";
+    btG.disabled=true;if(btO)btO.disabled=true;ocupado(true);msg.textContent="Transformando a fala em texto. Leva alguns segundos.";
     var fr=new FileReader();
     fr.onload=function(){
       var b64=String(fr.result).split(",")[1]||"";
       chamar({acao:"transcrever",email:s.email,token:s.token,audio:b64,mime:b.type||""}).then(function(r){
-        ocupado(false);btG.disabled=false;btO.disabled=false;
+        ocupado(false);btG.disabled=false;if(btO)btO.disabled=false;
         if(!r.ok){msg.textContent=MSG[r.erro]||MSG.ia;if(r.erro==="sessao")msg.textContent=MSG.sessao;return}
         if(!r.texto){msg.textContent=MSG.curto;return}
         acrescentar(r.texto);
-        msg.textContent="Pronto: a sua fala entrou no campo, logo acima. Revise o texto e, se quiser, organize no norte.";
-      }).catch(function(){ocupado(false);btG.disabled=false;btO.disabled=false;msg.textContent=MSG.rede});
+        msg.textContent=btO?"Pronto: a sua fala entrou no campo, logo acima. Revise o texto e, se quiser, organize no norte.":"Pronto: a fala entrou no campo, logo acima. Revise o texto com o grupo.";
+      }).catch(function(){ocupado(false);btG.disabled=false;if(btO)btO.disabled=false;msg.textContent=MSG.rede});
     };
     fr.readAsDataURL(b);
   }
@@ -834,7 +834,7 @@ $("[data-voz]").forEach(function(bx){
       },500);
     }).catch(function(){msg.textContent=MSG.microfone});
   });
-  btO.addEventListener("click",function(){
+  if(btO)btO.addEventListener("click",function(){
     var t=alvo.value.trim();
     if(t.length<80){msg.textContent=MSG.curta;return}
     btO.disabled=true;btG.disabled=true;ocupado(true);msg.textContent="Organizando a sua história nos itens do norte.";

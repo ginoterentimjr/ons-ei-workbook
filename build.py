@@ -48,17 +48,20 @@ e = html.escape
 
 
 def voz(k, v):
-    """Microfone (a fala vira texto) e o botão que organiza a história nos itens do norte."""
+    """Microfone (a fala vira texto) e, quando houver, o botão que organiza a história nos itens do norte."""
+    org = v.get("organizar", True)
     if PROF:
-        return ('<p class="dica">Na página do participante, este campo traz o microfone, que transforma a fala em texto, e o '
-                'botão “Organizar no norte”, que propõe os itens do norte com as palavras da pessoa, só nos campos vazios.</p>')
+        return ('<p class="dica">Na página do participante, este campo traz o microfone, que transforma a fala em texto'
+                + (', e o botão “Organizar no norte”, que propõe os itens do norte com as palavras da pessoa, só nos campos vazios.'
+                   if org else '; o relator dita a história comum em voz alta, e o grupo acompanha pelo Zoom.') + '</p>')
     roteiro = "".join(f"<li><b>{e(r)}</b> · {e(ph)}</li>" for _, r, ph in v["norte"])
+    intro = v.get("intro", "Fale no presente, como quem já está em 2028. Um roteiro, se ajudar:")
+    bt_org = (f'<button type="button" class="btn btn--sec" data-voz-organizar>{icone("list-checks", "#2A211C", 20, 2)} Organizar no norte</button>'
+              if org else "")
     return (f'<div class="voz" data-voz="{k}" data-norte="{e(json.dumps(v["norte"], ensure_ascii=False))}">'
             f'<p class="voz__acoes"><button type="button" class="btn" data-voz-gravar>{icone("mic", "#FFFFFF", 20, 2)} Contar falando</button>'
-            f'<button type="button" class="btn btn--sec" data-voz-organizar>{icone("list-checks", "#2A211C", 20, 2)} Organizar no norte</button>'
-            f'<span class="voz__tempo" data-voz-tempo></span></p>'
-            f'<div class="voz__roteiro" data-voz-roteiro hidden><p>Fale no presente, como quem já está em 2028. Um roteiro, se ajudar:</p>'
-            f'<ol>{roteiro}</ol></div>'
+            f'{bt_org}<span class="voz__tempo" data-voz-tempo></span></p>'
+            f'<div class="voz__roteiro" data-voz-roteiro hidden><p>{e(intro)}</p><ol>{roteiro}</ol></div>'
             f'<p class="voz__msg" data-voz-msg aria-live="polite"></p>'
             f'<p class="dica">{e(v["aviso"])}</p></div>')
 

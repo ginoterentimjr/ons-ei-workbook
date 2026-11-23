@@ -648,7 +648,44 @@
          "k": "e3.a7.comum",
          "rotulo": "A História Comum da Minha Sala",
          "linhas": 6,
-         "ph": "A história que a sala quer construir, no presente"
+         "ph": "A história que a sala quer construir, no presente",
+         "voz": {
+          "norte": [
+           [
+            "e3.hf.cena",
+            "Onde e Quando",
+            "É uma manhã de [mês] de 2028, em…"
+           ],
+           [
+            "e3.hf.chega",
+            "O Que Chega à EI",
+            "Um pedido, um problema, uma oportunidade do ONS ou do setor"
+           ],
+           [
+            "e3.hf.resp",
+            "Como a EI Responde",
+            "Quem participa, com que dados, em quanto tempo, com que resultado"
+           ],
+           [
+            "e3.hf.fora",
+            "O Que Dizem de Fora",
+            "Uma frase de alguém do ONS ou do setor sobre a EI"
+           ],
+           [
+            "e3.hf.deixou",
+            "O Que Já Não Existe",
+            "O que deixou de ser necessário"
+           ],
+           [
+            "e3.hf.orgulho",
+            "O Momento de Orgulho",
+            "Um resultado concreto, com número, se houver"
+           ]
+          ],
+          "organizar": false,
+          "intro": "Conte a história comum no presente, como quem já está em 2028. Um roteiro, se ajudar:",
+          "aviso": "O microfone grava só a voz de quem está com o workbook aberto: o relator dita a história em voz alta, e o grupo acompanha pelo Zoom e corrige. A OpenAI transforma a fala em texto; o workbook guarda só o texto, nunca o áudio."
+         }
         },
         {
          "k": "e3.a7.img",
