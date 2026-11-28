@@ -93,7 +93,7 @@ if(ent){
       var em=d.email.trim().toLowerCase(),ult="";try{ult=localStorage.getItem("onsei:ultimo")||""}catch(e){}
       if(ult&&ult!==em)limpar();
       s={email:em,token:r.token,nome:r.nome||d.nome,instr:!!r.instrutor};guardar(s);try{localStorage.setItem("onsei:ultimo",em)}catch(e){}
-      if(VOLTA){location.href=VOLTA}else{location.reload()}
+      if(VOLTA){location.href=VOLTA}else if(new Date()<new Date("2026-11-30T00:00:00-03:00")){location.href="preparacao.html"}else{location.reload()}
     }).catch(function(){av.textContent=MSG.rede;av.className="entrada__aviso entrada__aviso--erro"});
   });
 }

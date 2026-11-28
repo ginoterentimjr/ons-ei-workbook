@@ -201,22 +201,44 @@ def bloco_html(b, enc):
 
 
 PUBLICADOS = {3}
-FASES = (("O caminho da EI", 3),)
+FASES = (("O caminho da EI", 4),)
+ABRE_ENC = "2026-11-30"   # a página do encontro extra abre no dia do encontro, no horário de Brasília
+
+
+def parada_antes(atual):
+    """Parada da atividade antes do encontro, entre a imersão e o encontro extra, sem número (o encontro segue como 3)."""
+    tag = "span" if PROF else "a"
+    href = "" if PROF else ' href="preparacao.html"'
+    if atual == 3:
+        cls, rod, dat = "feito", "Rever a sua história", ""
+    else:
+        cls, rod = "aqui", "Você está aqui"
+        dat = f' data-aqui-ate="{ABRE_ENC}" data-depois-txt="Rever a sua história"'
+    return (f'<{tag} class="parada parada--antes {cls}" data-parada="antes" style="--tom:#2F6B6F"{href}{dat}>'
+            f'<span class="parada__foto" style="background-image:url({img_url("pa.jpg")})"><span class="parada__ic">{icone("pen-line", tam=22)}</span></span>'
+            f'<span class="parada__k">ANTES DO ENCONTRO · ATÉ 29/11</span>'
+            f'<b>A história do futuro</b><em>Uma manhã de 2028 na EI, contada por você</em><small class="parada__c">{rod}</small></{tag}>')
 
 
 def caminho_html(atual, grande=False):
-    """Mapa do caminho: três paradas ligadas por uma rota, com foto, ícone e produto; só o encontro extra tem página."""
-    o = f'<div class="rota rota--3{" rota--grande" if grande else ""}">'
+    """Mapa do caminho: as três paradas do programa e, antes do encontro extra, a atividade de preparação.
+    atual: 0 no Meu mapa, "prep" na página Antes do encontro, 3 na página do encontro."""
+    o = f'<div class="rota rota--4{" rota--grande" if grande else ""}">'
     o += ('<svg class="rota__linha" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true">'
-          '<path d="M166,62 C300,62 360,138 500,138 S700,62 834,62"/></svg>')
+          '<path d="M125,62 C210,62 290,138 375,138 S540,62 625,62 S790,138 875,138"/></svg>')
     for n, nome, data, tom, prod, grupo in CAMINHO:
+        if n == 3:
+            o += parada_antes(atual)
         cls = "feito" if n < 3 else ("aqui" if n == atual else "")
         pub = n in PUBLICADOS
         tag = "a" if pub and not PROF else "span"
         href = f' href="e{n}.html"' if tag == "a" else ""
+        trava = ""
+        if pub and n != atual and not PROF:
+            trava = f' data-abre="{ABRE_ENC}" data-abre-txt="Abre no dia 30/11" data-aqui-desde="{ABRE_ENC}"'
         foto = f'background-image:url({img_url(f"p{n}.jpg")})'
         rod = ("Você está aqui" if n == atual else ("Abrir o encontro" if pub else "Concluído"))
-        o += (f'<{tag} class="parada {cls}{"" if pub else " parada--feita"}" data-parada="{n}" style="--tom:{tom}"{href}>'
+        o += (f'<{tag} class="parada {cls}{"" if pub else " parada--feita"}" data-parada="{n}" style="--tom:{tom}"{href}{trava}>'
               f'<span class="parada__foto" style="{foto}"><span class="parada__n">{n}</span><span class="parada__ic">{icone(IC_ENC[n], tam=22)}</span></span>'
               f'<span class="parada__k">{e(grupo.upper())} · {e(data.split(" · ")[0])}</span>'
               f'<b>{e(nome)}</b><em>{e(prod)}</em><small class="parada__c">{rod}</small></{tag}>')
@@ -244,6 +266,15 @@ def pagina(titulo, corpo, pg, fontes_css, extra_js="", n_enc=None):
 
 CSS_ONS = """
 .rota--3{grid-template-columns:repeat(3,1fr)}.rota--3 .rota__fases{grid-template-columns:repeat(3,1fr)}
+.rota--4{grid-template-columns:repeat(4,1fr)}.rota--4 .rota__fases{grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){.rota--3,.rota--4{grid-template-columns:1fr}}
+.trava{display:none}html.fechado main>*{display:none!important}html.fechado main>.trava{display:block!important}
+.trava__acao{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:6px 0 18px}
+.cartao--destaque{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--tom);margin:6px 0 26px}
+.cartao--destaque[hidden]{display:none!important}.cartao--destaque>span:nth-child(2){display:flex;flex-direction:column;gap:4px}
+.trava__acao .btn{width:auto}
+.cartao--destaque .cartao__btn{margin-left:auto;flex:none;background:#fff;color:var(--tom);border-radius:10px;padding:12px 18px;font-weight:700;font-size:16px}
+@media (max-width:760px){.cartao--destaque{flex-wrap:wrap}.cartao--destaque .cartao__btn{margin-left:0}}
 .caminho-aviso{display:inline-block;margin:6px 0 10px;padding:6px 14px;border-radius:14px;background:#FBEEE5;color:#B04A1C;
   font-weight:700;font-size:14px;letter-spacing:.4px}
 .caminho-aviso--neutro{background:#F1ECE4;color:#5A5045}
@@ -292,10 +323,26 @@ def barra():
             '<button type="button" class="btn btn--sec" data-imprimir>Imprimir ou salvar em PDF</button></div>')
 
 
+def trava_html(fst):
+    """Antes do dia 30/11, a página do encontro mostra só este aviso e o caminho para a atividade antes do encontro.
+    O instrutor vê a página completa (a sessão dele é reconhecida pelo serviço); ?previa também abre."""
+    js = ('(function(){var p=/[?&]previa\\b/.test(location.search);try{var s=JSON.parse(localStorage.getItem("onsei:sessao")||"null");'
+          'if(s&&s.instr)p=true}catch(x){}if(!p&&new Date()<new Date("' + ABRE_ENC + 'T00:00:00-03:00"))'
+          'document.documentElement.classList.add("fechado")})();')
+    return ('<script>' + js + '</script><div class="trava" data-trava>'
+            f'<section class="capa capa--foto" style="--tom:#B04A1C{fst}"><p class="capa__k">ENCONTRO EXTRA · 30 DE NOVEMBRO DE 2026 · 14H</p>'
+            '<h1>Esta página abre <em>no dia do encontro</em></h1>'
+            '<p class="capa__l">As atividades do encontro são feitas em grupo, no dia 30 de novembro, das 14h às 17h. Até lá, a sua tarefa é a atividade antes do encontro: '
+            'a sua história do futuro, até domingo, 29 de novembro.</p></section>'
+            '<section class="bloco bloco--abre"><div class="trava__acao"><a class="btn btn--mentor btn--grande" href="preparacao.html">Responder à atividade antes do encontro</a></div>'
+            '<h3>Onde estamos no caminho</h3>' + caminho_html("prep") + '</section></div>')
+
+
 def encontro_html(enc):
     foto = FOTO_ENC.get(enc["n"])
     fst = f';--foto:url({img_url(foto)})' if foto else ""
-    o = f'<section class="capa capa--foto" style="--tom:{enc["tom"]}{fst}"><p class="capa__k">ENCONTRO EXTRA · {e(enc["data"].upper())}</p><h1>{enc["titulo"]}</h1>'
+    o = "" if PROF else trava_html(fst)
+    o += f'<section class="capa capa--foto" style="--tom:{enc["tom"]}{fst}"><p class="capa__k">ENCONTRO EXTRA · {e(enc["data"].upper())}</p><h1>{enc["titulo"]}</h1>'
     o += f'<p class="capa__l">{e(enc["lede"])}</p></section>'
     o += '<section class="bloco bloco--abre"><div class="capaz"><b>Ao término deste encontro, os participantes serão capazes de:</b><ol>' + "".join(f"<li>{e(x)}</li>" for x in enc["capaz"]) + "</ol></div>"
     o += "<h3>Onde estamos no caminho</h3>" + caminho_html(enc["n"])
@@ -314,7 +361,8 @@ def preparacao_html(p):
     o = ('<section class="capa capa--foto" style="--tom:#B04A1C;--foto:url(' + img_url("e3.jpg") + ')"><p class="capa__k">ANTES DO ENCONTRO · ATÉ 29 DE NOVEMBRO DE 2026</p>'
          '<h1>A história <em>do futuro</em></h1><p class="capa__l">Uma manhã de 2028 na EI, contada por você, no presente e com os detalhes que quiser. '
          'A história é o ponto de partida da visão 2028 no encontro de 30 de novembro: na sala, cada um lê o trecho mais forte, e o grupo escreve a história comum.</p></section>')
-    o += '<section class="bloco bloco--abre">' + ("" if PROF else barra()) + "</section>"
+    o += ('<section class="bloco bloco--abre">' + ("" if PROF else "<h3>Onde estamos no caminho</h3>" + caminho_html("prep") + barra())
+          + "</section>")
     for b in p["blocos"]:
         o += bloco_html(b, p)
     if not PROF:
@@ -381,12 +429,15 @@ else:
             f'<li><span class="disco" style="--tom:#5E7D52">{icone("map-pin")}</span><div><b>O seu registro, atividade a atividade</b><p>Cada resposta é gravada na sua página assim que você escreve e fica disponível em qualquer aparelho.</p></div></li></ol></section>')
     idx += ('<section class="mapa-curso" data-mapa-curso><div class="mapa-curso__cab"><div><div class="eyebrow" style="--tom:#E5662C"><span>O CAMINHO DA EI</span><i></i></div>'
             '<h2><span data-ola-bloco hidden>Olá, <span data-ola></span>. </span>O seu <em>caminho</em></h2>'
-            '<p>Encontro on-line em 30 de novembro, das 14h às 17h, horário de Brasília. A parada do encontro extra abre o workbook com as instruções e o seu registro.</p></div>'
-            f'<span class="rosa" aria-hidden="true">{icone("compass", "#C9A24D", 120, 1.1)}</span></div>' + caminho_html(0, True) +
+            f'<p data-ate="{ABRE_ENC}">Até 29 de novembro, responda à atividade antes do encontro: a sua história do futuro. A página do encontro extra abre no dia 30, para o encontro on-line das 14h às 17h, horário de Brasília.</p>'
+            f'<p data-desde="{ABRE_ENC}" hidden>Hoje é o encontro on-line, das 14h às 17h, horário de Brasília. Abra o encontro extra e deixe esta página aberta junto com o Zoom.</p></div>'
+            f'<span class="rosa" aria-hidden="true">{icone("compass", "#C9A24D", 120, 1.1)}</span></div>'
+            f'<a class="cartao cartao--mentor cartao--destaque" href="preparacao.html" style="--tom:#2F6B6F" data-ate="{ABRE_ENC}"><span class="disco" style="--tom:#E5662C">{icone("pen-line")}</span><span><span class="cartao__k">RESPONDA ANTES DO ENCONTRO · ATÉ 29 DE NOVEMBRO</span><b>A história do futuro</b><i>Uma manhã de 2028 na EI, contada por você; o workbook desenha a cena da sua história</i></span><span class="cartao__btn">Responder agora</span></a>'
+            f'<a class="cartao cartao--mentor cartao--destaque" href="e3.html" style="--tom:#B04A1C" data-desde="{ABRE_ENC}" hidden><span class="disco" style="--tom:#E5662C">{icone("sunrise")}</span><span><span class="cartao__k">HOJE · ENCONTRO ON-LINE DAS 14H ÀS 17H</span><b>O encontro extra</b><i>As instruções de cada atividade e o seu registro, junto com o Zoom e o Miro</i></span><span class="cartao__btn">Abrir o encontro</span></a>'
+            + caminho_html(0, True) +
             '<div class="cards3 cards3--claro"><div><b>Como usar</b><p>Abra o encontro do dia e registre as suas respostas à medida que cada atividade acontece. Sem conexão, o registro fica neste navegador e segue para a sua página na alteração seguinte.</p></div>'
             '<div><b>O fio da imersão</b><p>O encontro extra completa a sexta construção da imersão de 22 e 23 de outubro: a missão e a visão 2028 da EI.</p></div>'
             '<div><b>Reserva dos seus dados</b><p>As respostas ficam na planilha privada do encontro, aberta apenas ao Gino Terentim, e na sua página, protegida pelo seu código. Use o papel das pessoas, e não o nome.</p></div></div>'
-            f'<a class="cartao cartao--mentor" href="preparacao.html" style="--tom:#B04A1C"><span class="disco" style="--tom:#E5662C">{icone("sunrise")}</span><span><span class="cartao__k">ANTES DO ENCONTRO · ATÉ 29 DE NOVEMBRO</span><b>A história do futuro</b><i>Uma manhã de 2028 na EI, contada por você; o workbook desenha a cena da sua história</i></span></a>'
             f'<a class="cartao cartao--mentor" href="mentoria.html" style="--tom:#2A211C"><span class="disco" style="--tom:#E5662C">{icone("messages-square")}</span><span><span class="cartao__k">DEPOIS DO ENCONTRO</span><b>Dúvidas para o Gino Terentim</b><i>Pergunte sobre o método e as atividades; a resposta volta para a sua página e para o seu e-mail</i></span></a></section>')
     open(os.path.join(D, "index.html"), "w", encoding="utf-8").write(pagina(f"{TITULO} · Workbook digital", idx, "index", F))
     m = ('<section class="capa" style="--tom:#E5662C"><p class="capa__k">DEPOIS DO ENCONTRO</p><h1>Dúvidas para o <em>Gino Terentim</em></h1>'

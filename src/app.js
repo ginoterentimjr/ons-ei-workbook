@@ -50,6 +50,11 @@ function curvas(){$("[data-curva]").forEach(function(m){
 })}
 var _mapas=mapas;mapas=function(){_mapas();curvas()};
 mapas();espelhos();
+(function(){var hoje=new Date();function dia(x){return new Date(x+"T00:00:00-03:00")}
+$("[data-ate]").forEach(function(el){if(hoje>=dia(el.getAttribute("data-ate")))el.hidden=true});
+$("[data-desde]").forEach(function(el){if(hoje>=dia(el.getAttribute("data-desde")))el.hidden=false});
+$("[data-aqui-ate]").forEach(function(el){if(hoje>=dia(el.getAttribute("data-aqui-ate"))){el.classList.remove("aqui");el.classList.add("feito");var c=el.querySelector(".parada__c");if(c)c.textContent=el.getAttribute("data-depois-txt")}});
+$("[data-aqui-desde]").forEach(function(el){if(hoje>=dia(el.getAttribute("data-aqui-desde"))){el.classList.add("aqui");var c=el.querySelector(".parada__c");if(c&&document.body.getAttribute("data-pg")==="index")c.textContent="Você está aqui · abrir o encontro"}})})();
 (function(){var hoje=new Date();$("[data-abre]").forEach(function(el){var d=new Date(el.getAttribute("data-abre")+"T00:00:00-03:00");if(hoje<d){el.removeAttribute("href");el.classList.add("parada--breve");var c=el.querySelector(".parada__c");if(c){c.removeAttribute("data-cont");c.textContent=el.getAttribute("data-abre-txt")}}})})();
 window.CM4AI_atualizar=function(){$("[data-k]").forEach(altura);mapas();espelhos()};
 // exportar
